@@ -1,0 +1,22 @@
+<%= stylesheet_link_tag 'common', :media => "all" %>
+<div class="h-menu">
+  <input id="h-menu_checkbox" class="h-menuCheckbox" type="checkbox">
+  <label class="h-menu_icon" for="h-menu_checkbox"><span class="hamburger-icon"></span></label>
+  <label id="h-menu_black" class="h-menuCheckbox" for="h-menu_checkbox"></label>
+  <div id="h-menu_content">
+    <ul class="navi-item">
+  <div id="navi" class="popup-nav">
+      <p><%= link_to"ルーム登録","/rooms/new",class:"js_menu" %></p>
+      <p><%= link_to"予約済みのルーム一覧","/reservations/",class:"js_menu" %></p>
+      <p><%= link_to"登録済みのルーム一覧","/rooms/index",class:"js_menu" %></p>
+      <p><%= link_to"設定","/users/account",class:"js_menu" %></p>
+      <p><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "js_menu" %></p>
+  </div>
+</div>
+<script type="text/javascript">
+  $(function(){
+     $('#user_icon').click(function () {
+     $('#navi').slideToggle(300);
+     });
+  });
+</script>

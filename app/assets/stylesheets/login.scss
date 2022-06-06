@@ -1,0 +1,119 @@
+/*================= 新規登録 ==================*/
+.login-page {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.create-box {
+  max-width: 600px;
+  text-align: center;
+  padding: 24px;
+  margin: 60px auto;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0px 1px 6px 0px;
+}
+.field {
+  margin:10px 5px;
+}
+.condition {
+  color: white;
+  border: solid 3px #FF69A3;
+  border-radius: 5px;
+  background-color: #FF69A3;
+  font-size:14px;
+}
+.actions {
+  margin:20px 15px;
+}
+.create-btn {
+  color: white;
+  background-color: #6495ED;
+  border-radius: 5px;
+  width: 200px;
+  font-size:16px;
+}
+.newaction-btn {
+  color: #6495ED;
+  text-decoration: none;
+}
+/*================= ログイン ==================*/
+.login-box {
+  max-width: 600px;
+  text-align: center;
+  padding: 24px;
+  margin: 60px auto;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0px 1px 6px 0px;
+}
+.action-btn {
+  color: white;
+  background-color: #6495ED;
+  border-radius: 5px;
+  width: 180px;
+  font-size:16px;
+}
+.newaction-btn {
+  color: #6495ED;
+  text-decoration: none;
+}
+/*================= ユーザー情報編集 ==================*/
+.edit-box {
+  max-width: 600px;
+  text-align: center;
+  padding: 24px;
+  margin: 60px auto;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0px 1px 6px 0px;
+}
+.update-btn {
+  color: white;
+  background-color: #6495ED;
+  border-radius: 5px;
+  width: 200px;
+  font-size:16px;
+}
+
+.back-btn1 {
+  color: white;
+  text-decoration: none;
+  background-color: #6495ED;
+  border-radius: 5px;
+  width: 200px;
+  font-size:16px;
+}
+
+/*================= ゲスト・新規ログイン ==================*/
+.menu-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+    background-color: #3584bb;
+}
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    position: absolute;
+}
+.menu-btn span:before {
+    bottom: 8px;
+}
+.menu-btn span:after {
+    top: 8px;
+}
