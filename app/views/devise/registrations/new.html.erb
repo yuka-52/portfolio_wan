@@ -6,7 +6,7 @@
     <%= render "devise/shared/error_messages", resource: resource %>
     <div class="field">
       <%= f.label :必須, {class: 'condition'} %>
-      <%= f.text_field :name, autofocus: true, :placeholder => "ユーザー名"%>
+      <%= f.text_field :name, autofocus: true, autocomplete: "name", :placeholder => "ユーザー名"%>
     </div>
     <div class="field">
       <%= f.label :必須,{class: 'condition'} %>
@@ -16,7 +16,7 @@
       <%= f.label :必須,{class: 'condition'} %>
       <% if @minimum_password_length %>
       <% end %>
-      <%= f.password_field :password, autocomplete: "new-password",:placeholder => "パスワード" %>
+      <%= f.password_field :password, autocomplete: "new-password",:placeholder => "パスワード(8文字以上)" %>
     </div>
     <div class="field">
       <%= f.label :必須,{class: 'condition'} %>

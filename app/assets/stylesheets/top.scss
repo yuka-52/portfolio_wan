@@ -124,7 +124,7 @@ a:hover, a:focus {
 /*================= 2. HOME ==================*/
 /*=== 2.1 HEADER ===*/
 header {
-  background-color: pink;
+  background-color: #ffffff;
   position: relative;
   top: 0;
   width: 100%;
@@ -147,7 +147,7 @@ footer {
   display: block;
   width: 100%;
   padding: 45px 0;
-  background-color: pink;
+  background-color: #000066;
   position: relative;
 }
 @media (max-width: 479px) {
@@ -169,6 +169,7 @@ footer {
   }
 }
 .footer {
+  color: #ffffff;
   font-size: 12px;
   margin: 0;
   position: absolute;
@@ -176,4 +177,32 @@ footer {
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%)
+}
+
+/*=== TOP PAGE ===*/
+.main_pic {
+  background-image: url(/assets/imag_cover_top.jpg);
+  background-size: cover;
+  max-width: 100%;
+  height: 700px;
+  background-position:center center;
+  position: relative;
+}
+.main_nav {
+  position: absolute;
+  top: 90px;
+  width: 100%;
+  justify-content: center;
+}
+.nav_link {
+  list-style: none;
+  display: inline-block;
+  padding-top: 10px;
+  justify-content: center;
+  padding-right: 20px;
+  padding-left: 100px;
+}
+.nav_menu {
+  color: #778899;
+  font-size: 16px;
 }

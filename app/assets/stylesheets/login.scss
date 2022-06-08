@@ -89,31 +89,192 @@
 
 /*================= ゲスト・新規ログイン ==================*/
 .menu-btn {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    display: flex;
-    height: 60px;
-    width: 60px;
-    justify-content: center;
-    align-items: center;
-    z-index: 90;
-    background-color: #3584bb;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  height: 60px;
+  width: 60px;
+  justify-content: center;
+  align-items: center;
+  z-index: 90;
+  background-color: #ffffff;
 }
 .menu-btn span,
 .menu-btn span:before,
 .menu-btn span:after {
-    content: '';
-    display: block;
-    height: 3px;
-    width: 25px;
-    border-radius: 3px;
-    background-color: #ffffff;
-    position: absolute;
+  content: '';
+  display: block;
+  height: 3px;
+  width: 25px;
+  border-radius: 3px;
+  background-color: #000066;
+  position: absolute;
 }
 .menu-btn span:before {
-    bottom: 8px;
+  bottom: 8px;
 }
 .menu-btn span:after {
-    top: 8px;
+  top: 8px;
+}
+#menu-btn-check:checked ~ .menu-btn span {
+  background-color: rgba(255, 255, 255, 0);
+}
+#menu-btn-check:checked ~ .menu-btn span::before {
+  bottom: 0;
+  transform: rotate(45deg);
+}
+#menu-btn-check:checked ~ .menu-btn span::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+#menu-btn-check {
+  display: none;
+}
+.menu-content {
+  width: 30%;
+  height: auto;
+  position: fixed;
+  top: 80px;
+  right: 100%;
+  z-index: 80;
+  background-color: #ffffff;
+  transition: all 0.5s;
+}
+.menu-content ul {
+  padding: 70px 10px 0;
+}
+.menu-content ul li {
+  border-bottom: solid 1px #000066;
+  list-style: none;
+}
+.menu-content ul li a {
+  display: block;
+  width: 100%;
+  font-size: 15px;
+  box-sizing: border-box;
+  color:#000066;
+  text-decoration: none;
+  padding: 9px 15px 10px 0;
+  position: relative;
+}
+.menu-content ul li a::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-top: solid 2px #000066;
+  border-right: solid 2px #000066;
+  transform: rotate(45deg);
+  position: absolute;
+  right: 11px;
+  top: 16px;
+}
+#menu-btn-check:checked ~ .menu-content {
+  right: 0;
+}
+
+/*================= アカウント詳細画面 ==================*/
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.user-nav-pc {
+  height: 60vh;
+  width: 20%;
+  box-sizing: border-box;
+  padding: 30px 15px;
+}
+.active1 {
+  border-right: 3px solid #000066;
+  padding: 10px;
+}
+ul {
+  list-style: none;
+}
+.account-btn {
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px;
+}
+.account-btn {
+  color: #000066;
+}
+.account-box {
+  width: 45%;
+  hight: aito;
+  text-align: left;
+  padding: 24px;
+  margin: 60px auto;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0px 1px 6px 0px;
+  position: relative;
+}
+.account-main {
+  position: absolute;
+  left: 40%;
+  top: 10px;
+  margin: 10px 0px;
+}
+.show-main {
+  margin: 25px 5px;
+}
+.line {
+  border-top: 2px dotted #8c8b8b;
+}
+
+.show-title {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.my-email, .my-password {
+  position: absolute;
+  left: 250px;
+  font-size: 14px;
+}
+
+.my-password {
+  font-size: 25px;
+  letter-spacing: 0.12em;
+}
+.actions {
+  margin:20px 15px;
+}
+
+.edit-btn {
+  color: white;
+  background-color: #6495ED;
+  border-radius: 5px;
+  width: 100px;
+  font-size:18px;
+  position: absolute;
+  left: 40%;
+}
+/*================= アカウント編集画面 ==================*/
+.edit-box {
+  max-width: 600px;
+  text-align: center;
+  padding: 24px;
+  margin: 60px auto;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0px 1px 6px 0px;
+}
+.update-btn {
+  color: white;
+  background-color: #6495ED;
+  border-radius: 5px;
+  width: 200px;
+  font-size:16px;
+}
+.back-btn {
+  color: white;
+  text-decoration: none;
+  background-color: #6495ED;
+  border-radius: 5px;
+  width: 200px;
+  font-size:16px;
 }

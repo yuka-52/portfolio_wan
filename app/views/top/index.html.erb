@@ -1,1 +1,8 @@
-<p>トップページにします！</p>
+<%= stylesheet_link_tag 'top', :media =>"all" %>
+<div class="main_pic"></div>
+<div class="main_nav">
+  <li class="nav_link"><%= link_to"ホーム", root_path, class:"nav_menu" %></li>
+  <li class="nav_link"><%= link_to"迷子の犬を探す", root_path, class:"nav_menu" %></li>
+  <li class="nav_link"><%= link_to"迷子の犬を保護した", root_path, class:"nav_menu" %></li>
+  <li class="nav_link"><%= link_to"迷子の犬を見かけた", root_path, class:"nav_menu" %></li>
+</div>
