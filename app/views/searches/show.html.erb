@@ -1,0 +1,42 @@
+<%= stylesheet_link_tag 'searches', :media => "all" %>
+<div class="searchshow-box">
+  <h2 class="search-main">迷子犬情報詳細</h2>
+  <div class="container">
+    <div class="row main_image_box">
+      <%= image_tag @search.dog_images[0].url, class:"searchshow_image", size: '400x450' %>
+    </div>
+    <div class="detail">
+      <ul class="subimage img01">
+        <% @search.dog_images.each_with_index do |image, i| %>
+          <div data-target="#carousel" data-slide-to=<%= i %> class="thumb">
+            <li><%= image_tag image.url, class:"mini_image", size: '120x100' %></li>
+          </div>
+        <% end %>
+      </ul>
+    </div>
+    <div class="media-body">
+      <ul class="list-inline">
+        <li>
+          <%= link_to '一覧ページへ戻る', :back %>
+        </li>
+      </ul>
+      <h2 class="dog_search_show"><%= @search.search_title %></h2>
+      <h3 class="dog_search_show">犬種：<%= @search.dog_breed %></h3>
+      <h3 class="dog_search_show">年齢：<%= @search.dog_age %>才</h3>
+      <p class="dog_search_show">特徴：<%= @search.dog_profile %></p>
+      <p class="dog_search_show">いなくなった場所：<%= @search.disappeared_place %></p>
+      <p class="dog_search_show">いなくなった日時：<%= @search.disappeared_date %></p>
+      <p class="dog_search_show">連絡先：<%= @search.contact %></p>
+    </div>
+    <div class=edit_box>
+      <% if user_signed_in? && current_user.id == @search.user_id %>
+        <%= button_to "編集", edit_search_path, class:"edit_btn"%></td>
+      <% end %>
+    </div>
+    <div class=delete_box>
+      <% if user_signed_in? && current_user.id == @search.user_id %>
+        <%= button_to "削除", search_path, method: :delete, data: {confirm: "本当に削除しますか？"}, class:"edit_btn"%>
+      <% end %>
+    </div>
+  </div>
+</div>

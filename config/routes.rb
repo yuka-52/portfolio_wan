@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update]
   get 'users/sign_in', to: 'users/sessions#new'
   get 'users/sign_up', to: 'users/registrations#new'
-  get "users/show", to: "users#show"
+  get 'users/show', to: "users#show"
   resources :searches
+  post 'searches/:id/edit', to: 'searches#edit'
 end

@@ -36,4 +36,6 @@ yarn-debug.log*
 .yarn-integrity
 
 /storage/*
-
+app/assets/images
+Images/*
+public/uploads/*

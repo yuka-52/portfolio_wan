@@ -1,1 +1,210 @@
-
+/*================= 迷子犬登録画面 ==================*/
+.search-box {
+  width: 45%;
+  text-align: left;
+  padding: 24px;
+  margin: 60px auto;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0px 1px 6px 0px;
+  position: relative;
+}
+.search-main {
+  position: absolute;
+  top: 10px;
+  margin: 10px 0px;
+  padding-bottom:20px;
+  left: 40%;
+}
+.line {
+  margin-top: 10px;
+  border-top: 1px dotted #8c8b8b;
+}
+.search_view_content {
+  position:relative;
+  top: 40px;
+  padding: 20px;
+  margin: 0 15px;
+  font-size: 16px;
+}
+.require {
+  font-weight: bold;
+}
+.condition {
+  color: white;
+  border: solid 3px #FF82B2;
+  border-radius: 5px;
+  background-color: #FF82B2;
+  font-size:14px;
+}
+.form {
+  position: absolute;
+  left: 220px;
+  width: 220px;
+}
+.form-age {
+  position: absolute;
+  left: 220px;
+  width: 180px;
+}
+.age {
+  font-size: 12px;
+  position: absolute;
+  left: 410px;
+}
+.form-text , .form-image {
+  position: absolute;
+  left: 220px;
+  top: 0px;
+  width: 220px;
+}
+.search_btn {
+  position: relative;
+  color: white;
+  background-color: #6495ED;
+  border-radius: 5px;
+  width: 100px;
+  font-size:18px;
+  left: 40%;
+}
+/*================= 迷子犬一覧 ==================*/
+.searchContent {
+  width: 100%;
+  hight: auto;
+  position: relative;
+}
+.searchTop {
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+.page_main {
+  position: absolute;
+  left: 50px;
+}
+.btn-default {
+  color: black;
+  background-color: #FF9933;
+  border-radius: 25px;
+  width: 150px;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+.searchMain {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 10px 0px 25px 25px;
+  display: inline-block;
+  justify-content: center;
+}
+.searchBox {
+  margin: 20px;
+  padding: 20px;
+  background-color: #B0C4DE;
+  border-radius: 15px;
+}
+.search_title {
+  font-size: 18px;
+  color: black;
+  padding: 10px;
+  margin: 20px;
+}
+.searchImage {
+  position: relative;
+  top: 10px;
+}
+.search_image {
+  border-radius: 10px;
+}
+.searchCaption h3{
+  width: 280px;
+  position: relative;
+  top: 20px;
+  hight: auto;
+}
+/*================= 迷子犬詳細画面 ==================*/
+@media (min-width: 480px){
+.searchshow-box {
+  width: 60%;
+  text-align: left;
+  padding: 24px;
+  margin: 60px auto;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0px 1px 6px 0px;
+  position: relative;
+  }
+}
+.container {
+  width: 100%;
+  margin-top: 40px;
+}
+.searchshow_image {
+  width: 40%;
+  hight: auto;
+  margin: 15px;
+}
+.detail {
+  width: 400px;
+}
+.detail ul{
+    display:inline-block;
+    width:90%;
+    padding:0;
+    margin: 5px;
+}
+.detail ul li{
+    display:inline-block;
+    width:30.3%;
+    float:left;
+}
+.detail ul li img{
+    max-width:80%;
+    margin: 0;
+    display:block;
+    border-radius: 0px;
+}
+.media-body {
+  width: 50%;
+  position: absolute;
+  top: 80px;
+  left: 48%;
+}
+.media-body .list-inline {
+  margin-bottom: 20px;
+}
+.media-body .list-inline li a{
+  color: #A9A9A9;
+  margin-right: 8px;
+}
+.list-inline li:hover {
+  color: #b9b9b9;
+  opacity: .8;
+}
+.dog_search_show {
+  margin-bottom: 10px;
+}
+.dog_search_show p {
+  font-size: 13px;
+}
+.edit_box {
+  width: 30%;
+  position: absolute;
+  top: 580px;
+  left: 80%;
+  margin: 10px;
+}
+.delete_box {
+  width: 30%;
+  position: absolute;
+  top: 620px;
+  left: 80%;
+  margin: 10px;
+}
+.edit_btn{
+  color: black;
+  background-color: #CCCCFF;
+  border-radius: 5px;
+  width: 100px;
+  font-size:16px;
+}
