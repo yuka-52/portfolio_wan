@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'protections/index'
   get 'searches/index'
   devise_for :users, controllers:{
     sessions: 'users/sessions',
@@ -15,4 +16,5 @@ Rails.application.routes.draw do
   get 'users/show', to: "users#show"
   resources :searches
   post 'searches/:id/edit', to: 'searches#edit'
+  resources :protections
 end
