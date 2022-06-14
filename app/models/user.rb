@@ -7,6 +7,7 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 8, maximum: 32}
   attr_accessor :current_password
   has_many :searches, dependent: :destroy
+  has_many :protections, dependent: :destroy
   def self.guest
     find_or_create_by!(email: 'aaa@aaa.com') do |user|
       user.password = SecureRandom.urlsafe_base64

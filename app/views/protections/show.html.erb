@@ -1,0 +1,44 @@
+<%= stylesheet_link_tag 'protections', :media => "all" %>
+<div class="protectionshow-box">
+  <h2 class="protection-main">迷子犬情報詳細</h2>
+  <div class="container">
+    <div class="row main_image_box">
+      <%= image_tag @protection.protection_images[0].url, class:"protectionshow_image", size: '400x450' %>
+    </div>
+    <div class="detail">
+      <ul class="subimage img01">
+        <% @protection.protection_images.each_with_index do |image, i| %>
+          <div data-target="#carousel" data-slide-to=<%= i %> class="thumb">
+            <li><%= image_tag image.url, class:"mini_image", size: '120x100' %></li>
+          </div>
+        <% end %>
+      </ul>
+    </div>
+    <div class="media-body">
+      <ul class="list-inline">
+        <li>
+          <%= link_to '一覧ページへ戻る', :back %>
+        </li>
+      </ul>
+      <h2 class="dog_protection_show"><%= @protection.protection_title %></h2>
+      <h3 class="dog_protection_show">犬種：<%= @protection.protection_breed %></h3>
+      <p class="dog_protection_show">首輪の有無：<%= @protection.protection_choker %></p>
+      <p class="dog_protection_show">鑑札札の有無：<%= @protection.protection_dogtag %></p>
+      <p class="dog_protection_show">特徴：<%= @protection.protection_profile %></p>
+      <p class="dog_protection_show">保護した場所・経緯：<%= @protection.protection_place %></p>
+      <p class="dog_protection_show">保護した日時：<%= @protection.protection_date %></p>
+      <p class="dog_protection_show">連絡先：<%= @protection.protection_contact %></p>
+      <p class="dog_protection_show">届け出済みの機関：<%= @protection.contacted_institution %></p>
+    </div>
+    <div class=edit_box>
+      <% if user_signed_in? && current_user.id == @protection.user_id %>
+        <%= button_to "編集", edit_protection_path, class:"edit_btn"%></td>
+      <% end %>
+    </div>
+    <div class=delete_box>
+      <% if user_signed_in? && current_user.id == @protection.user_id %>
+        <%= button_to "削除", protection_path, method: :delete, data: {confirm: "本当に削除しますか？"}, class:"edit_btn"%>
+      <% end %>
+    </div>
+  </div>
+</div>

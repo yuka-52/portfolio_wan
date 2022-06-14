@@ -50,7 +50,9 @@ class ProtectionsController < ApplicationController
   private
 
   def protection_params
-      params.require(:search).permit(:protection_title, :protection_breed, :protection_profile, :protection_place, :protection_date, :protection_contact, :protection_choker, :protection_dogtag, :contacted_institution { protection_images: [] })
+      params.require(:protection).permit(:protection_title, :protection_breed, :protection_profile,
+      :protection_place, :protection_date, :protection_contact, :protection_choker, :protection_dogtag,
+      :contacted_institution, { protection_images: [] })
   end
 
   def ensure_user

@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   resources :searches
   post 'searches/:id/edit', to: 'searches#edit'
   resources :protections
+  post 'protections/:id/edit', to: 'protections#edit'
 end
