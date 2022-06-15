@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_14_121939) do
+ActiveRecord::Schema.define(version: 2022_06_15_044013) do
 
   create_table "active_storage_attachments", charset: "utf8mb3", force: :cascade do |t|
     t.string "name", null: false
@@ -69,6 +69,18 @@ ActiveRecord::Schema.define(version: 2022_06_14_121939) do
     t.string "search_title"
     t.date "disappeared_date"
     t.integer "user_id"
+  end
+
+  create_table "sights", charset: "utf8mb3", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "sight_title"
+    t.text "sight_profile"
+    t.text "sight_place"
+    t.date "sight_date"
+    t.json "sight_images"
+    t.text "sight_contact"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", charset: "utf8mb3", force: :cascade do |t|

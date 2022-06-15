@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'sights/index'
   get 'protections/index'
   get 'searches/index'
   devise_for :users, controllers:{
@@ -18,4 +19,6 @@ Rails.application.routes.draw do
   post 'searches/:id/edit', to: 'searches#edit'
   resources :protections
   post 'protections/:id/edit', to: 'protections#edit'
+  resources :sights
+  post 'sights/:id/edit', to: 'sights#edit'
 end

@@ -13,8 +13,6 @@
         <div class="searchImage">
           <% if search.dog_images? %>
             <%= image_tag search.dog_images[0].url, class:"search_image", size: '280x320' %>
-          <% else %>
-            <%= image_tag 'fallback/default.png', class:"search_image", size: '280x320' %>
           <% end %>
         </div>
         <div class="searchCaption">
