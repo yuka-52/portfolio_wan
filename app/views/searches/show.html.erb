@@ -3,14 +3,12 @@
   <h2 class="search-main">迷子犬情報詳細</h2>
   <div class="container">
     <div class="row main_image_box">
-      <%= image_tag @search.dog_images[0].url, class:"searchshow_image", size: '400x450' %>
+      <%= image_tag @search.dog_images[0].url, class:"searchshow_image img01", size: '400x450' %>
     </div>
     <div class="detail">
       <ul class="subimage img01">
         <% @search.dog_images.each_with_index do |image, i| %>
-          <div data-target="#carousel" data-slide-to=<%= i %> class="thumb">
-            <li><%= image_tag image.url, class:"mini_image", size: '120x100' %></li>
-          </div>
+          <li><%= image_tag image.url, class:"mini_image", size: '120x100' %></li>
         <% end %>
       </ul>
     </div>

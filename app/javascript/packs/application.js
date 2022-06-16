@@ -4,6 +4,9 @@
 // that code so it'll be compiled.
 //= require jquery
 //= require jquery_ujs
+//= require turbolinks
+//= require_tree .
+//= require activestorage
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
