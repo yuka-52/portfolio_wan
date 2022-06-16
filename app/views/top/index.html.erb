@@ -4,5 +4,28 @@
   <li class="nav_link"><%= link_to"ホーム", root_path, class:"nav_menu" %></li>
   <li class="nav_link"><%= link_to"迷子の犬を探す", searches_index_path, class:"nav_menu" %></li>
   <li class="nav_link"><%= link_to"迷子の犬を保護した", protections_index_path, class:"nav_menu" %></li>
-  <li class="nav_link"><%= link_to"迷子の犬を見かけた", root_path, class:"nav_menu" %></li>
+  <li class="nav_link"><%= link_to"迷子の犬を見かけた", sights_index_path, class:"nav_menu" %></li>
+</div>
+<div class="main_page">
+  <div class="title">
+    <h2>Wan Search</h2><br>
+    <p>Wan Searchは、『愛犬が迷子になった』、『迷子の犬を保護した』、『迷子の犬を目撃した』などの情報を登録できる無料の掲示板です。</p>
+    <p>コロナ禍によるペットブームや保護犬の譲渡が増え嬉しい反面、迷子になり飼い主さんと離れ離れになるワンコが増えています。<br>
+       2020年度、犬の殺処分数は4059匹でした。1日約11匹の犬達が殺されていることになります。<br>
+       その中には、迷子になりお家に帰れなくなっている犬たちも含まれています。また、迷子になっていることで事故にあうリスクもあります。<br>
+       迷子の家族が1日でも早く元の生活に戻れるようご協力をお願い申し上げます。
+    </p>
+  </div>
+</div>
+<div class="menu_btn">
+  <li class="btn_link"><%= link_to "迷子犬を登録する", "/searches/new", class: "btn btn-default" %></li>
+  <li class="btn_link"><%= link_to "保護した犬を登録する", "/protections/new", class: "btn btn-default" %></li>
+  <li class="btn_link"><%= link_to "目撃した犬を登録する", "/sights/new", class: "btn btn-default" %></li>
+</div>
+<div class="sub_page">
+  <div class="dog_number_box">
+    <h3>迷子犬の投稿総数:<%= @searches.count %>件</h3>
+    <h3>保護犬の投稿総数:<%= @protections.count %>件</h3>
+    <h3>目撃犬の投稿総数:<%= @sights.count %>件</h3>
+  </div>
 </div>

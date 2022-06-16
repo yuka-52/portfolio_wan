@@ -21,7 +21,7 @@ ul li {
 }
 
 p {
-  font-size: 12px;
+  font-size: 13px;
   color: #252525;
   font-weight: 400;
   line-height: 18px;
@@ -184,7 +184,7 @@ footer {
   background-image: url(/assets/imag_cover_top.jpg);
   background-size: cover;
   max-width: 100%;
-  height: 700px;
+  height: 680px;
   background-position:center center;
   position: relative;
 }
@@ -193,6 +193,7 @@ footer {
   top: 90px;
   width: 100%;
   justify-content: center;
+  text-align: center;
 }
 .nav_link {
   list-style: none;
@@ -205,4 +206,54 @@ footer {
 .nav_menu {
   color: #778899;
   font-size: 16px;
+}
+.main_page {
+  position: relative;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 30px;
+}
+.title h2 p{
+  padding: 30px 0px ;
+  text-align: center;
+}
+.menu_btn {
+  position: relative;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 30px;
+}
+.btn_link {
+  list-style: none;
+  display: inline-block;
+  padding-top: 10px;
+  justify-content: center;
+  padding-right: 20px;
+  padding-left: 100px;
+}
+.btn-default {
+  color: black;
+  background-color: #FFCC66;
+  border-radius: 25px;
+  width: 180px;
+}
+.sub_page {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 30px;
+}
+.dog_number_box {
+  width: 20%;
+  padding: 10px;
+  margin: 5px auto;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0px 1px 6px 0px;
+}
+.dog_number_box h3 {
+  padding: 3px;
 }
