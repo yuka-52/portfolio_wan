@@ -5,4 +5,3 @@ module ApplicationHelper
     page_title.blank? ? BASE_TITLE : "#{page_title} - #{BASE_TITLE}"
   end
 end
-

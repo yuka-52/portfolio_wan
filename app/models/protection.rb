@@ -12,4 +12,14 @@ class Protection < ApplicationRecord
 
   mount_uploaders :protection_images, ProtectionImagesUploader
   belongs_to :user
+
+  def self.search(search, address)
+    if address
+      @protections = Protection.where(["protection_place LIKE(?)", "%#{address}%"])
+    elsif search
+      @protections = Protection.where(["protection_title LIKE(?) OR protection_breed LIKE(?) OR protection_profile LIKE(?) OR protection_choker LIKE(?) OR protection_dogtag LIKE(?)", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%"])
+    else
+      @protections = Protection.all
+    end
+  end
 end

@@ -9,23 +9,23 @@ class ProtectionsController < ApplicationController
   def new
     @protection = Protection.new
   end
-    
+
   def create
     @protection = Protection.new(protection_params)
     @protection.user_id = current_user.id
     if @protection.save
       flash[:notice] = "保護犬を登録しました"
-      redirect_to  :protections
+      redirect_to :protections
     else
       flash[:notice] = "全ての項目を入力してください"
       render "new"
     end
   end
-       
+
   def show
     @protection = Protection.find(params[:id])
   end
-       
+
   def edit
     @protection = Protection.find(params[:id])
   end
@@ -46,13 +46,17 @@ class ProtectionsController < ApplicationController
     flash[:notice] = "保護犬情報を削除しました"
     redirect_to :protections
   end
-    
+
+  def search
+    @protections = Protection.search(params[:search], params[:address])
+  end
+
   private
 
   def protection_params
-      params.require(:protection).permit(:protection_title, :protection_breed, :protection_profile,
-      :protection_place, :protection_date, :protection_contact, :protection_choker, :protection_dogtag,
-      :contacted_institution, { protection_images: [] })
+    params.require(:protection).permit(:protection_title, :protection_breed, :protection_profile,
+    :protection_place, :protection_date, :protection_contact, :protection_choker, :protection_dogtag,
+    :contacted_institution, { protection_images: [] })
   end
 
   def ensure_user

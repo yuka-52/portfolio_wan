@@ -1,7 +1,7 @@
 class SightsController < ApplicationController
   before_action :authenticate_user!
   before_action :ensure_user, only: [:edit, :update, :destroy]
-  
+
   def index
     @sights = Sight.all
   end
@@ -9,13 +9,13 @@ class SightsController < ApplicationController
   def new
     @sight = Sight.new
   end
-      
+
   def create
     @sight = Sight.new(sight_params)
     @sight.user_id = current_user.id
     if @sight.save
       flash[:notice] = "目撃した犬を登録しました"
-      redirect_to  :sights
+      redirect_to :sights
     else
       flash[:notice] = "全ての項目を入力してください"
       render "new"
@@ -25,7 +25,7 @@ class SightsController < ApplicationController
   def show
     @sight = Sight.find(params[:id])
   end
-         
+
   def edit
     @sight = Sight.find(params[:id])
   end
@@ -45,6 +45,10 @@ class SightsController < ApplicationController
     @sight.destroy
     flash[:notice] = "目撃した犬の情報を削除しました"
     redirect_to :sights
+  end
+
+  def search
+    @sights = Sight.search(params[:search], params[:address])
   end
 
   private

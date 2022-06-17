@@ -114,7 +114,6 @@
   font-size: 18px;
   color: black;
   padding: 10px;
-  margin: 20px;
 }
 .sightImage {
   position: relative;
@@ -217,8 +216,17 @@
 }
 .contact_box {
   width: 60%;
-  position: absolute;
-  top: 600px;
+  position: relative;
+  top: 10px;
   left: 50%;
   margin: 10px;
+}
+.root-default {
+  color: black;
+  background-color: #FFCC66;
+  border-radius: 25px;
+  width: 140px;
+  position: absolute;
+  right: 10px;
+  top: 5px;
 }

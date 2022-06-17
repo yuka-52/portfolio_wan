@@ -21,7 +21,7 @@ ul li {
 }
 
 p {
-  font-size: 14px;
+  font-size: 13px;
   color: #252525;
   font-weight: 400;
   line-height: 18px;
@@ -219,6 +219,9 @@ footer {
   padding: 30px 0px ;
   text-align: center;
 }
+.title p {
+  font-size: 14px;
+}
 .menu_btn {
   position: relative;
   width: 100%;
@@ -256,4 +259,21 @@ footer {
 }
 .dog_number_box h3 {
   padding: 3px;
+}
+.finderPage {
+  width: 100%;
+  position:relative;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  justify-content: center;
+  text-align: center;
+}
+.finderBox_protectionarea h4 {
+  margin: 15px;
+}
+.finderBox_sightarea h4 {
+  margin: 15px;
+}
+.form-control {
+  margin: 2px;
 }

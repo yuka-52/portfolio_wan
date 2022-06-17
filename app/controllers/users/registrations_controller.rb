@@ -5,17 +5,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_account_update_params, only: [:update]
   before_action :ensure_normal_user, only: [:edit, :update]
   # GET /resource/sign_up
-  #def new
-   #suoer
-  #end
+  # def new
+  # suoer
+  # end
 
-  #def create
-    #super
-  #end
+  # def create
+  # super
+  # end
 
-  #def after_sign_up_path_for(resource)
-    #super
-  #end
+  # def after_sign_up_path_for(resource)
+  # super
+  # end
 
   # GET /resource/edit
   # def edit
@@ -50,7 +50,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-   devise_parameter_sanitizer.permit(:account_update, keys: [:name, :email, :password])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :email, :password])
   end
 
   def ensure_normal_user
