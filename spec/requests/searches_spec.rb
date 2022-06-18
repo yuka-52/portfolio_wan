@@ -3,14 +3,14 @@ require 'rails_helper'
 RSpec.describe "Searches", type: :request do
   let!(:user) { create(:user) }
   let!(:searches) { create(:search, user: user) }
-  
+
   describe "GET /index" do
     it "正常なレスポンスを返すこと" do
       get "/searches/index"
       expect(response).to have_http_status(:success)
     end
   end
-  
+
   describe "POST /searches" do
     before do
       sign_in user

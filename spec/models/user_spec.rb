@@ -1,7 +1,6 @@
 require 'rails_helper'
 
-  RSpec.describe User, type: :model do
-
+RSpec.describe User, type: :model do
   it "名前、メール、パスワードがある場合、有効である" do
     user = User.new(
       name: "user",
@@ -14,19 +13,19 @@ require 'rails_helper'
   it "名前がない場合、無効である" do
     user = FactoryBot.build(:user, name: nil)
     user.valid?
-    expect(user.errors[:name]).to include ("を入力してください")
+    expect(user.errors[:name]).to include("を入力してください")
   end
 
-  it "メールアドレスがない場合、無効である"  do
+  it "メールアドレスがない場合、無効である" do
     user = FactoryBot.build(:user, email: nil)
     user.valid?
-    expect(user.errors[:email]).to include ("を入力してください")
+    expect(user.errors[:email]).to include("を入力してください")
   end
 
   it "重複したメールアドレスの場合、無効である" do
-    user1 = FactoryBot.create(:user)
+    user = FactoryBot.create(:user)
     user2 = FactoryBot.build(:user)
     user2.valid?
-    expect(user2.errors[:email]).to include ("はすでに存在します")
+    expect(user2.errors[:email]).to include("はすでに存在します")
   end
 end

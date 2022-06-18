@@ -8,6 +8,6 @@ FactoryBot.define do
     disappeared_place { "Tokyo" }
     disappeared_date { "2022-06-15" }
     contact { "Police" }
-    dog_images { [ Rack::Test::UploadedFile.new(Rails.root.join('spec/fixtures/test.jpg'), 'spec/fixtures/test.jpg') ] }
+    dog_images { [Rack::Test::UploadedFile.new(Rails.root.join('spec/fixtures/test.jpg'), 'spec/fixtures/test.jpg')] }
   end
 end
