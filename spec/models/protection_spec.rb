@@ -6,7 +6,7 @@ RSpec.describe Protection, type: :model do
     let!(:protection) { build(:protection, user_id: user.id) }
     subject { test_protection.valid? }
     let(:test_protection) { protection }
-     
+
     context 'カラムが空欄でないことのテスト' do
       it 'タイトルが空欄でないこと' do
         test_protection.protection_title = ''
@@ -59,7 +59,7 @@ RSpec.describe Protection, type: :model do
       end
     end
   end
-  
+
   describe 'アソシエーションのテスト' do
     context 'Userモデルとの関係' do
       it 'N:1となっている' do
