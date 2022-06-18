@@ -1,7 +1,7 @@
 class TopController < ApplicationController
   def index
-    @searches = Search.all
-    @protections = Protection.all
-    @sights = Sight.all
+    @searches_count = Search.count
+    @protections_count = Protection.count
+    @sights_count = Sight.count
   end
 end
