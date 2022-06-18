@@ -32,26 +32,26 @@
 <div class="finderPage">
   <div class="finderBox_protectionarea">
     <h4>《 保護犬の条件検索 》</h4>
-    <%= form_tag(protections_search_path,:method => 'get') do %>
+    <%= form_tag(protections_search_path,{method: "get"}) do %>
       <%= text_field_tag :address,"",placeholder:"エリアを入力",class:"form-control" , size: '30x10' %>
       <%= submit_tag '検索', class:"search_sub" %>
     <% end %>
   </div>
   <div class="finderBox_protection">
-    <%= form_tag(protections_search_path,:method => 'get') do %>
+    <%= form_tag(protections_search_path,{method: "get"}) do %>
       <%= text_field_tag :search,"",placeholder:"キーワードを入力",class:"form-control", size: '30x10' %>
       <%= submit_tag '検索', class:"search_sub" %>
     <% end %>
   </div>
     <div class="finderBox_sightarea">
     <h4>《 目撃された犬の条件検索 》</h4>
-    <%= form_tag(sights_search_path,:method => 'get') do %>
+    <%= form_tag(sights_search_path,{method: "get"}) do %>
       <%= text_field_tag :address,"",placeholder:"エリアを入力",class:"form-control", size: '30x10' %>
       <%= submit_tag '検索', class:"search_sub" %>
     <% end %>
   </div>
   <div class="finderBox_protection">
-    <%= form_tag(sights_search_path,:method => 'get') do %>
+    <%= form_tag(sights_search_path,{method: "get"}) do %>
       <%= text_field_tag :search,"",placeholder:"キーワードを入力",class:"form-control", size: '30x10' %>
       <%= submit_tag '検索', class:"search_sub" %>
     <% end %>
