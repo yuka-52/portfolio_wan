@@ -42,6 +42,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'annotate'
   gem 'rubocop-airbnb'
+  gem 'faker'
 end
 
 group :development do
