@@ -5,6 +5,10 @@ RSpec.describe "Searches", type: :request do
   let!(:searches) { create(:search, user: user) }
 
   describe "GET /index" do
+    before do
+      sign_in user
+    end
+
     it "正常なレスポンスを返すこと" do
       get "/searches/index"
       expect(response).to have_http_status(:success)
