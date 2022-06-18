@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :protection do
-    protection_images { "" }
+    user
+    protection_images { [ Rack::Test::UploadedFile.new(Rails.root.join('spec/fixtures/test.jpg'), 'spec/fixtures/test.jpg') ] }
     protection_title { "MyString" }
     protection_breed { "MyString" }
     protection_profile { "MyText" }

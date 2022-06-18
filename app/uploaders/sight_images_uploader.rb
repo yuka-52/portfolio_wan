@@ -16,7 +16,7 @@ class SightImagesUploader < CarrierWave::Uploader::Base
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url
     "default.png"
-   end
+  end
 
   def extension_whitelist
     %w(jpg jpeg png gif)

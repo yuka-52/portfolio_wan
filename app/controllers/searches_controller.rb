@@ -1,5 +1,5 @@
 class SearchesController < ApplicationController
-  before_action :authenticate_user!
+  #before_action :authenticate_user!
   before_action :ensure_user, only: [:edit, :update, :destroy]
 
   def index
@@ -50,7 +50,9 @@ class SearchesController < ApplicationController
   private
 
   def search_params
-    params.require(:search).permit(:search_title, :dog_breed, :dog_age, :dog_profile, :disappeared_place, :disappeared_date, :contact, { dog_images: [] })
+    params.require(:search).permit(:search_title, :dog_breed,
+    :dog_age, :dog_profile, :disappeared_place, :disappeared_date,
+    :contact, { dog_images: [] })
   end
 
   def ensure_user

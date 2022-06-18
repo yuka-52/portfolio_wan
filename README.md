@@ -1,24 +1,24 @@
-# README
+# Wan Search
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+迷子犬の情報投稿サイトです。
+飼い犬が迷子になった際の情報呼びかけや迷い犬を保護・目撃した際の飼い主探しに役立ちます。
 
-Things you may want to cover:
+*使用技術
+Ruby 3.0.2
+Rails 6.1.4
+MySQL
+Docker/Docker-compose
+AWS
+Rspec 
+Rubocop
 
-* Ruby version
+*機能一覧
+　・ユーザー登録、ログイン機能（devise）
+　・投稿機能
+　　-画像投稿（carrierwave）
+　・検索機能
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* テスト
+　・単体テスト(model)
+　・機能テスト(request)
+　・統合テスト(feature)
