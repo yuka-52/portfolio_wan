@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'top#index'
+  root 'tops#index'
   get 'finders/finder'
   get 'sights/index'
   get 'protections/index'
@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: 'users/registrations',
   }
-  get 'tops/index', to: 'top#index'
+  get 'tops/index', to: 'tops#index'
   devise_scope :user do
     post 'users/guest_sign_in', to: 'users/sessions#new_guest'
   end
