@@ -40,3 +40,4 @@ app/assets/images
 Images/*
 public/uploads/*
 /spec/test_uploads
+.DS_Store
