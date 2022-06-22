@@ -9,7 +9,7 @@
 　・Rails 6.1.4
 　・MySQL
 　・Docker/Docker-compose
-　・AWS
+　・AWS ,s3
 　・Rspec 
 　・Rubocop
 
