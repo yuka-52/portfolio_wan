@@ -41,3 +41,4 @@ Images/*
 public/uploads/*
 /spec/test_uploads
 .DS_Store
+.env
