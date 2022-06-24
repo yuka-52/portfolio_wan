@@ -6,7 +6,7 @@
       <% if @sight.sight_images? %>
         <%= image_tag @sight.sight_images[0].url, class:"sight_image", size: '400x450' %>
       <% else %>
-        <%= image_tag 'default.jpg', class:"sight_image", size: '400x450' %>
+        <%= image_tag "default.jpg", class:"sight_image", size: '400x450' %>
       <% end %>
     </div>
     <div class="detail">
