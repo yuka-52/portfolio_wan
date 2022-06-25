@@ -18,7 +18,9 @@ Rails.application.routes.draw do
   get 'users/sign_in', to: 'users/sessions#new'
   get 'users/sign_up', to: 'users/registrations#new'
   get 'users/show', to: "users#show"
-  resources :searches
+  resources :searches do
+    resources :comments, only: [:create]
+  end
   post 'searches/:id/edit', to: 'searches#edit'
   resources :protections
   post 'protections/:id/edit', to: 'protections#edit'

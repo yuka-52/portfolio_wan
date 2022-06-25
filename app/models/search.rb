@@ -10,4 +10,5 @@ class Search < ApplicationRecord
 
   mount_uploaders :dog_images, DogImgUploader
   belongs_to :user
+  has_many :comments, dependent: :destroy
 end
