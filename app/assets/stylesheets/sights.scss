@@ -129,6 +129,9 @@
   hight: auto;
 }
 /*================= 目撃犬詳細画面 ==================*/
+.sight_main {
+  width: 100%;
+}
 @media (min-width: 480px){
 .sightshow-box {
   width: 60%;
@@ -229,4 +232,47 @@
   position: absolute;
   right: 10px;
   top: 5px;
+}
+.boardMain{
+  width: 100%;
+  display: inline-block;
+  justify-content: center;
+  position: relative;
+  padding: 10px;
+}
+.board_creat {
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+}
+.board_creat h2 {
+  padding: 15px;
+}
+.form-board {
+  width: 280px;
+}
+.board_btn {
+  position: absolute;
+  top: 100px;
+  left: 48%;
+  top: 170px;
+}
+.board_index {
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
+.board_index h2 {
+  padding: 15px;
+}
+.line2 {
+  margin-top: 10px;
+  border-top: 1px dotted #8c8b8b;
+  width: 60%;
+  position: relative;
+  left: 20%;
+}
+.home_btn {
+  font-size: 14px;
+  color: #999999;
 }

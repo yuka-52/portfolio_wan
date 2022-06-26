@@ -1,47 +1,73 @@
 <%= stylesheet_link_tag 'sights', :media => "all" %>
-<div class="sightshow-box">
-  <h2 class="sight-main">目撃犬情報詳細</h2>
-  <div class="container">
-    <div class="row main_image_box">
-      <% if @sight.sight_images? %>
-        <%= image_tag @sight.sight_images[0].url, class:"sight_image", size: '400x450' %>
-      <% else %>
-        <%= image_tag "default.jpg", class:"sight_image", size: '400x450' %>
-      <% end %>
-    </div>
-    <div class="detail">
-      <ul class="subimage img01">
-        <% @sight.sight_images.each_with_index do |image, i| %>
-          <div data-target="#carousel" data-slide-to=<%= i %> class="thumb">
-            <li><%= image_tag image.url, class:"mini_image", size: '120x100' %></li>
-          </div>
+<div class="sight_main">
+  <div class="sightshow-box">
+    <h2 class="sight-main">目撃犬情報詳細</h2>
+    <div class="container">
+      <div class="row main_image_box">
+        <% if @sight.sight_images? %>
+          <%= image_tag @sight.sight_images[0].url, class:"sight_image", size: '400x450' %>
+        <% else %>
+          <%= image_tag "default.jpg", class:"sight_image", size: '400x450' %>
         <% end %>
-      </ul>
+      </div>
+      <div class="detail">
+        <ul class="subimage img01">
+          <% @sight.sight_images.each_with_index do |image, i| %>
+            <div data-target="#carousel" data-slide-to=<%= i %> class="thumb">
+              <li><%= image_tag image.url, class:"mini_image", size: '120x100' %></li>
+            </div>
+          <% end %>
+        </ul>
+      </div>
+      <div class="media-body">
+        <ul class="list-inline">
+          <li>
+            <%= link_to '一覧ページへ戻る', :back %>
+          </li>
+        </ul>
+        <h2 class="dog_sight_show"><%= @sight.sight_title %></h2>
+        <p class="dog_sight_show">特徴：<%= @sight.sight_profile %></p>
+        <p class="dog_sight_show">目撃した場所・経緯：<%= @sight.sight_place %></p>
+        <p class="dog_sight_show">目撃した日時：<%= @sight.sight_date %></p>
+        <p class="dog_sight_show">届け出した機関：<%= @sight.sight_contact %></p>
+      </div>
+      <div class=edit_box>
+        <% if user_signed_in? && current_user.id == @sight.user_id %>
+          <%= button_to "編集", edit_sight_path, class:"edit_btn"%></td>
+        <% end %>
+      </div>
+      <div class=delete_box>
+        <% if user_signed_in? && current_user.id == @sight.user_id %>
+          <%= button_to "削除", sight_path, method: :delete, data: {confirm: "本当に削除しますか？"}, class:"edit_btn"%>
+        <% end %>
+      </div>
+      <div class=contact_box>
+        <p>※犬に見覚えがある場合は、上記の届け出された機関に連絡してください。</p>
+      </div>
     </div>
-    <div class="media-body">
-      <ul class="list-inline">
-        <li>
-          <%= link_to '一覧ページへ戻る', :back %>
-        </li>
-      </ul>
-      <h2 class="dog_sight_show"><%= @sight.sight_title %></h2>
-      <p class="dog_sight_show">特徴：<%= @sight.sight_profile %></p>
-      <p class="dog_sight_show">目撃した場所・経緯：<%= @sight.sight_place %></p>
-      <p class="dog_sight_show">目撃した日時：<%= @sight.sight_date %></p>
-      <p class="dog_sight_show">届け出した機関：<%= @sight.sight_contact %></p>
-    </div>
-    <div class=edit_box>
-      <% if user_signed_in? && current_user.id == @sight.user_id %>
-        <%= button_to "編集", edit_sight_path, class:"edit_btn"%></td>
+  </div>
+  <div class="boardMain">
+    <div class="board_creat">
+      <h2>迷子犬についての情報をコメントをする</h2>
+      <%= form_with(model:[@sight, @board], method: :post) do |f| %>
+        <%= f.text_area :board_content, class:"form-board" %>
+        <%= f.hidden_field :sight_id, value: @sight.id %>
+        <%= f.submit"コメントする" , class:"board_btn" %>
       <% end %>
     </div>
-    <div class=delete_box>
-      <% if user_signed_in? && current_user.id == @sight.user_id %>
-        <%= button_to "削除", sight_path, method: :delete, data: {confirm: "本当に削除しますか？"}, class:"edit_btn"%>
+  </div>
+  <div class="boardMain">
+    <div class="board_index">
+      <h2>コメント一覧</h2>
+      <% @boards.each do |b| %>
+        <div class=boardBox>
+          <%= b.user.name %>
+          <%= b.created_at.strftime("%Y-%m-%d %H:%M:%S") %>
+          <%= b.board_content %>
+          <hr class= "line2">
+        </div>
       <% end %>
-    </div>
-    <div class=contact_box>
-      <p>※犬に見覚えがある場合は、上記の届け出された機関に連絡してください。</p>
+      <%= link_to"ホームへ戻る", root_path, class:"home_btn" %>
     </div>
   </div>
 </div>

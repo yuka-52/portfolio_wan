@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_25_052303) do
+ActiveRecord::Schema.define(version: 2022_06_26_054857) do
+
+  create_table "boards", charset: "utf8mb3", force: :cascade do |t|
+    t.string "board_content"
+    t.bigint "user_id", null: false
+    t.bigint "sight_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["sight_id"], name: "index_boards_on_sight_id"
+    t.index ["user_id"], name: "index_boards_on_user_id"
+  end
 
   create_table "comments", charset: "utf8mb3", force: :cascade do |t|
     t.string "comment_content"
@@ -78,6 +88,8 @@ ActiveRecord::Schema.define(version: 2022_06_25_052303) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "boards", "sights"
+  add_foreign_key "boards", "users"
   add_foreign_key "comments", "searches"
   add_foreign_key "comments", "users"
 end

@@ -24,6 +24,8 @@ class SightsController < ApplicationController
 
   def show
     @sight = Sight.find(params[:id])
+    @boards = @sight.boards
+    @board = current_user.boards.new
   end
 
   def edit

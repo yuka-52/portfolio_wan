@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   post 'searches/:id/edit', to: 'searches#edit'
   resources :protections
   post 'protections/:id/edit', to: 'protections#edit'
-  resources :sights
+  resources :sights do
+    resources :boards, only: [:create]
+  end
   post 'sights/:id/edit', to: 'sights#edit'
 end
