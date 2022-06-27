@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :board do
-    board_content { "MyString" }
-    user { nil }
-    sight { nil }
+    board_content { "コメント" }
+    association :user
+    association :sight
   end
 end
