@@ -8,7 +8,7 @@ class Sight < ApplicationRecord
   mount_uploaders :sight_images, SightImagesUploader
   belongs_to :user
   has_many :boards, dependent: :destroy
-  
+
   def self.search(search, address)
     if address
       @sights = Sight.where(["sight_place LIKE(?)", "%#{address}%"])

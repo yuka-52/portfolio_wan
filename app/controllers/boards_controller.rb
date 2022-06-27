@@ -1,5 +1,4 @@
 class BoardsController < ApplicationController
-
   def create
     @board = current_user.boards.new(board_params)
     if @board.save
@@ -10,6 +9,7 @@ class BoardsController < ApplicationController
   end
 
   private
+
   def board_params
     params.require(:board).permit(:board_content, :sight_id)
   end

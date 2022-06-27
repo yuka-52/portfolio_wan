@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-
   def create
     @comment = current_user.comments.new(comment_params)
     if @comment.save
@@ -10,7 +9,7 @@ class CommentsController < ApplicationController
   end
 
   private
- 
+
   def comment_params
     params.require(:comment).permit(:comment_content, :search_id)
   end
