@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe User, type: :feature do
   before do
     @user = User.create(
-    name: 'user',
-    email: 'user@example.com',
-    password: 'test1234',
+      name: 'user',
+      email: 'user@example.com',
+      password: 'test1234',
     )
   end
 

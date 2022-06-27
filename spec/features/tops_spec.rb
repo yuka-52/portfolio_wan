@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe "Tops", type: :feature do
-
   describe 'ログインしていない場合のトップページが表示できる' do
     before do
       visit root_path
@@ -11,13 +10,13 @@ RSpec.describe "Tops", type: :feature do
       click_link "ホーム"
       expect(page).to have_content("ゲストログイン ログイン 新規登録")
     end
-  
+
     it "Sign upへページ遷移できるか" do
       click_on "新規登録"
       expect(page).to have_content("新しいアカウントを作成")
     end
 
-    it "Sign upへページ遷移できるか" do
+    it "Sign inへページ遷移できるか" do
       click_on "ログイン"
       expect(page).to have_content("ログイン")
     end
