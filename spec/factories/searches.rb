@@ -1,7 +1,6 @@
 FactoryBot.define do
   factory :search do
     search_title { "search_pochi" }
-    dog_name { "Pochi" }
     dog_breed { "siba" }
     dog_age { 1 }
     dog_profile { "Text" }

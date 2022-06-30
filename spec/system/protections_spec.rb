@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Protections", type: :feature do
+RSpec.describe "Protections", type: :system do
   # let!(:protections) { create(:protection, user: user) }
   # let!(:user) { create(:user) }
 

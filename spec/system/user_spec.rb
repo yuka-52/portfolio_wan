@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe User, type: :feature do
+RSpec.describe User, type: :system do
   before do
     @user = User.create(
       name: 'user',

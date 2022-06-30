@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Tops", type: :feature do
+RSpec.describe "Tops", type: :system do
   describe 'ログインしていない場合のトップページが表示できる' do
     before do
       visit root_path

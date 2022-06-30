@@ -45,6 +45,8 @@ group :development, :test do
   gem 'annotate'
   gem 'rubocop-airbnb'
   gem 'faker'
+  gem 'selenium-webdriver'
+  gem 'webdrivers'
 end
 
 group :development do
@@ -59,7 +61,3 @@ group :development do
   gem "rubocop-rspec", require: false
 end
 
-group :test do
-  gem 'selenium-webdriver'
-  gem 'webdrivers'
-end

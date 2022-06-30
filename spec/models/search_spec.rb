@@ -7,6 +7,8 @@ RSpec.describe Search, type: :model do
     let(:user) { FactoryBot.create(:user) }
     let(:test_search) { search }
     let!(:search) { build(:search, user_id: user.id) }
+    let(:image_path) { Rails.root.join('spec/fixtures/test.jpg') }
+    let(:image) { Rack::Test::UploadedFile.new(image_path) }
 
     context 'カラムが空欄でないことのテスト' do
       it 'タイトルが空欄でないこと' do
