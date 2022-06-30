@@ -7,8 +7,6 @@ RSpec.describe Search, type: :model do
     let(:user) { FactoryBot.create(:user) }
     let(:test_search) { search }
     let!(:search) { build(:search, user_id: user.id) }
-    let(:image_path) { Rails.root.join('spec/fixtures/test.jpg') }
-    let(:image) { Rack::Test::UploadedFile.new(image_path) }
 
     context 'カラムが空欄でないことのテスト' do
       it 'タイトルが空欄でないこと' do
@@ -31,7 +29,7 @@ RSpec.describe Search, type: :model do
         is_expected.to eq false
       end
       it '400文字以下であること' do
-        search.dog_profile = Faker::Lorem.characters(number: 401)
+        test_search.dog_profile = Faker::Lorem.characters(number: 401)
         expect(search.valid?).to eq false
       end
 
