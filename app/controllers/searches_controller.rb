@@ -49,6 +49,10 @@ class SearchesController < ApplicationController
     redirect_to :searches
   end
 
+  def finder
+    @searches = Search.finder(params[:search], params[:address])
+  end
+
   private
 
   def search_params

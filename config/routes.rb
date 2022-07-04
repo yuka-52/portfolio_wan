@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'searches/index'
   get 'protections/search'
   get 'sights/search'
+  get 'searches/finder'
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations',

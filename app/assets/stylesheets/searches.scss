@@ -76,6 +76,7 @@
 .searchTop {
   padding-top: 20px;
   padding-bottom: 30px;
+  margin-left: 30px;
 }
 .page_main {
   position: absolute;
@@ -253,4 +254,15 @@
 .home_btn {
   font-size: 14px;
   color: #999999;
+}
+/*================= 検索結果画面 ==================*/
+
+.root-default {
+  color: black;
+  background-color: #FFCC66;
+  border-radius: 25px;
+  width: 140px;
+  position: absolute;
+  right: 10px;
+  top: 5px;
 }

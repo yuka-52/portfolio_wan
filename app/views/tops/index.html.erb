@@ -12,9 +12,8 @@
     <p>Wan Searchは、『愛犬が迷子になった』、『迷子の犬を保護した』、『迷子の犬を目撃した』などの情報を登録できる無料の掲示板です。</p>
     <p>コロナ禍によるペットブームや保護犬の譲渡が増え嬉しい反面、迷子になり飼い主さんと離れ離れになるワンコが増えています。<br>
        2020年度、犬の殺処分数は4059匹でした。1日約11匹の犬達が殺されていることになります。<br>
-       その中には、迷子になりお家に帰れなくなっている犬たちも含まれています。また、迷子になっていることで事故にあうリスクもあります。<br>
-       迷子の家族が1日でも早く元の生活に戻れるようご協力をお願い申し上げます。
-    </p>
+       その中には、迷子になりお家に帰れなくなっている犬たちも含まれています。<br>
+       迷子の家族が1日でも早く元の生活に戻れるようご協力をお願い申し上げます。</p>
   </div>
 </div>
 <div class="menu_btn">
@@ -30,6 +29,19 @@
   </div>
 </div>
 <div class="finderPage">
+  <div class="finderBox_protectionarea">
+    <h4>《 迷子の犬の条件検索 》</h4>
+    <%= form_tag(searches_finder_path,{method: "get"}) do %>
+      <%= text_field_tag :address,"",placeholder:"エリアを入力",class:"form-control" , size: '30x10' %>
+      <%= submit_tag '検索', class:"search_sub" %>
+    <% end %>
+  </div>
+  <div class="finderBox_protection">
+    <%= form_tag(searches_finder_path,{method: "get"}) do %>
+      <%= text_field_tag :search,"",placeholder:"キーワードを入力",class:"form-control", size: '30x10' %>
+      <%= submit_tag '検索', class:"search_sub" %>
+    <% end %>
+  </div>
   <div class="finderBox_protectionarea">
     <h4>《 保護されている犬の条件検索 》</h4>
     <%= form_tag(protections_search_path,{method: "get"}) do %>
