@@ -4,7 +4,7 @@
   <li class="nav_link"><%= link_to"ホーム", root_path, class:"nav_menu" %></li>
   <li class="nav_link"><%= link_to"迷子の犬を探す", searches_index_path, class:"nav_menu" %></li>
   <li class="nav_link"><%= link_to"迷子の犬を保護した", protections_index_path, class:"nav_menu" %></li>
-  <li class="nav_link"><%= link_to"迷子の犬を見かけた", sights_index_path, class:"nav_menu" %></li>
+  <li class="nav_link"><%= link_to"迷子の犬を目撃した", sights_index_path, class:"nav_menu" %></li>
 </div>
 <div class="main_page">
   <div class="title">
@@ -18,7 +18,7 @@
   </div>
 </div>
 <div class="menu_btn">
-  <li class="btn_link"><%= link_to "迷子犬を登録する", "/searches/new", class: "btn btn-default" %></li>
+  <li class="btn_link"><%= link_to "迷子の犬を登録する", "/searches/new", class: "btn btn-default" %></li>
   <li class="btn_link"><%= link_to "保護した犬を登録する", "/protections/new", class: "btn btn-default" %></li>
   <li class="btn_link"><%= link_to "目撃した犬を登録する", "/sights/new", class: "btn btn-default" %></li>
 </div>
@@ -31,7 +31,7 @@
 </div>
 <div class="finderPage">
   <div class="finderBox_protectionarea">
-    <h4>《 保護犬の条件検索 》</h4>
+    <h4>《 保護されている犬の条件検索 》</h4>
     <%= form_tag(protections_search_path,{method: "get"}) do %>
       <%= text_field_tag :address,"",placeholder:"エリアを入力",class:"form-control" , size: '30x10' %>
       <%= submit_tag '検索', class:"search_sub" %>
