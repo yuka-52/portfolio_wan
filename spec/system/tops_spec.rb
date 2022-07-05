@@ -36,27 +36,27 @@ RSpec.describe "Tops", type: :system do
     it "迷子犬一覧へページ遷移できるか" do
       sign_in @user
       click_link "迷子の犬を探す"
-      click_link "迷子犬 一覧"
-      expect(page).to have_content("迷子の犬を探す")
+      click_link "迷子になっている犬　一覧"
+      expect(page).to have_content("現在迷子になっている犬たち")
     end
 
     it "保護犬一覧へページ遷移できるか" do
       sign_in @user
       click_link "迷子の犬を保護した"
-      click_link "保護犬 一覧"
+      click_link "保護されている犬　　一覧"
       expect(page).to have_content("現在保護されている犬たち")
     end
 
     it "目撃されている犬一覧ページへ遷移できるか" do
       sign_in @user
-      click_link "迷子の犬を見かけた"
-      click_link "目撃された犬 一覧"
+      click_link "迷子の犬を目撃した"
+      click_link "目撃されている犬　　一覧"
       expect(page).to have_content("現在目撃されている犬たち")
     end
 
     it "迷子犬を登録するページへ遷移できるか" do
       sign_in @user
-      click_link "迷子犬を登録する"
+      click_link "迷子の犬を登録する"
       expect(page).to have_content("迷子犬情報登録")
     end
 
