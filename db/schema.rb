@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_26_054857) do
+ActiveRecord::Schema.define(version: 2022_07_07_013412) do
 
   create_table "boards", charset: "utf8mb3", force: :cascade do |t|
     t.string "board_content"
@@ -30,6 +30,21 @@ ActiveRecord::Schema.define(version: 2022_06_26_054857) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["search_id"], name: "index_comments_on_search_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "notifications", charset: "utf8mb3", force: :cascade do |t|
+    t.integer "visitor_id", null: false
+    t.integer "visited_id", null: false
+    t.integer "search_id"
+    t.integer "comment_id"
+    t.string "action", default: "", null: false
+    t.boolean "checked", default: false, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["comment_id"], name: "index_notifications_on_comment_id"
+    t.index ["search_id"], name: "index_notifications_on_search_id"
+    t.index ["visited_id"], name: "index_notifications_on_visited_id"
+    t.index ["visitor_id"], name: "index_notifications_on_visitor_id"
   end
 
   create_table "protections", charset: "utf8mb3", force: :cascade do |t|

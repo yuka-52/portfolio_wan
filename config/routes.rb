@@ -29,4 +29,5 @@ Rails.application.routes.draw do
     resources :boards, only: [:create]
   end
   post 'sights/:id/edit', to: 'sights#edit'
+  resources :notifications, only: :index
 end

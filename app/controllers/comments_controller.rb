@@ -1,12 +1,16 @@
 class CommentsController < ApplicationController
   def create
-    @comment = current_user.comments.new(comment_params)
-    if @comment.save
-      redirect_back(fallback_location: root_path)
-    else
-      redirect_back(fallback_location: root_path)
+      @search = Search.find(params[:search_id])
+      @comment = @search.comments.build(comment_params)
+      @comment.user_id = current_user.id
+      @comment_search = @comment.search
+      if @comment.save
+        @comment_search.create_notification_comment!(current_user, @comment.id)
+        redirect_back(fallback_location: root_path)
+      else
+        redirect_back(fallback_location: root_path)
+      end
     end
-  end
 
   private
 
