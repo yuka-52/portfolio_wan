@@ -3,4 +3,5 @@ class Board < ApplicationRecord
 
   belongs_to :user
   belongs_to :sight
+  has_many :notifications, dependent: :destroy
 end
