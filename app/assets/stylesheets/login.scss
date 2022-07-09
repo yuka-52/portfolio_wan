@@ -224,24 +224,24 @@ ul {
   top: 10px;
   margin: 10px 0px;
 }
+.showMain {
+  margin: 10px 5px;
+}
 .show-main {
   margin: 25px 5px;
 }
 .line {
   border-top: 2px dotted #8c8b8b;
 }
-
 .show-title {
   font-weight: bold;
   font-size: 14px;
 }
-
-.my-email, .my-password {
+.my-name, .my-email, .my-password {
   position: absolute;
   left: 250px;
-  font-size: 14px;
+  font-size: 16px;
 }
-
 .my-password {
   font-size: 25px;
   letter-spacing: 0.12em;
@@ -249,7 +249,6 @@ ul {
 .actions {
   margin:20px 15px;
 }
-
 .edit-btn {
   color: white;
   background-color: #6495ED;
