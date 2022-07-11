@@ -37,6 +37,11 @@
           <%= button_to "削除", search_path, method: :delete, data: {confirm: "本当に削除しますか？"}, class:"edit_btn"%>
         <% end %>
       </div>
+      <div class="usersName">
+        <p class="userName_link">投稿者：
+          <%= link_to @search.user.name %>さんにメッセージを送る
+        </p>
+      </div>
     </div>
   </div>
   <div class="commentMain">
