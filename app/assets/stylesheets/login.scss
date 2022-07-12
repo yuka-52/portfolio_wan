@@ -283,3 +283,38 @@ ul {
   width: 200px;
   font-size:16px;
 }
+/*================= 投稿者情報 ==================*/
+.line_profile {
+  border-top: 2px dotted #8c8b8b;
+}
+.user-title {
+  position: relative;
+  font-size: 16px;
+  left: 25%;
+  font-weight: bold;
+}
+.user-name {
+  position: relative;
+  font-size: 16px;
+  left: 40%;
+}
+.chatroom a {
+  color: #ffffff;
+  background-color: #6495ED;
+  border-radius: 5px;
+  position: relative;
+  left: 35%;
+  top: 10px;
+  font-size: 15px;
+  padding: 5px 20px;
+}
+.chatroom {
+  color: #ffffff;
+  background-color: #6495ED;
+  border-radius: 5px;
+  position: relative;
+  left: 35%;
+  top: 10px;
+  font-size: 15px;
+  padding: 5px 20px;
+}

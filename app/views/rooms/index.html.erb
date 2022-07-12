@@ -1,0 +1,28 @@
+<%= stylesheet_link_tag 'rooms', :media => "all" %>
+<div class="dmPage"></div>
+  <div class="row_dm">
+    <div class="col-lg2 user-nav-pc d-lg-block d-none">
+      <ul>
+        <li class="active">
+          <%=link_to "メッセージ一覧" %>
+        </li>
+      </ul>
+    </div>
+    <div class="userBox">
+      <h1 class="messaegeIndex">メッセージ一覧</div>
+      <div class="indexBox">
+        <% if @anotherEntries.present? %>
+          <% @anotherEntries.each do |e| %>
+            <%= link_to room_path(e.room.id) do %>
+              <hr>
+              <p class="textCenter"><%= e.user.name %>さんとのメッセージ</p><br>
+              <hr>
+            <% end %>
+          <% end %>
+        <% else %>
+          <h3 class="text-center">メッセージはまだありません</h3>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

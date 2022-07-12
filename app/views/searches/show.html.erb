@@ -39,7 +39,8 @@
       </div>
       <div class="usersName">
         <p class="userName_link">投稿者：
-          <%= link_to @search.user.name %>さんにメッセージを送る
+          <%= link_to @search.user.name, "/users/#{@search.user.id}/profile",
+          class:"users_name" %>さんにメッセージを送る
         </p>
       </div>
     </div>
@@ -50,7 +51,7 @@
       <%= form_with(model:[@search, @comment], method: :post) do |f| %>
         <%= f.text_area :comment_content, class:"form-comment" %>
         <%= f.hidden_field :search_id, value: @search.id %>
-        <%= f.submit"コメントする" , class:"comment_btn" %>
+        <%= f.submit "コメントする" , class:"comment_btn" %>
       <% end %>
     </div>
   </div>
@@ -65,7 +66,7 @@
           <hr class= "line2">
         </div>
       <% end %>
-      <%= link_to"ホームへ戻る", root_path, class:"home_btn" %>
+      <%= link_to "ホームへ戻る", root_path, class:"home_btn" %>
     </div>
   </div>
 </div>
