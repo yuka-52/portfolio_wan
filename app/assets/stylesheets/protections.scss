@@ -210,11 +210,8 @@
   font-size:16px;
 }
 .contact_box {
-  width: 60%;
   position: relative;
   top: 10px;
-  left: 40%;
-  margin: 10px;
 }
 .root-default {
   color: black;
@@ -224,4 +221,11 @@
   position: absolute;
   right: 10px;
   top: 5px;
+}
+.userName_link {
+  font-size: 14px;
+}
+.users_name {
+  color: #000080;
+  font-size: 15px;
 }

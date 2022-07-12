@@ -40,8 +40,14 @@
         <%= button_to "削除", protection_path, method: :delete, data: {confirm: "本当に削除しますか？"}, class:"edit_btn"%>
       <% end %>
     </div>
+    <div class="usersName">
+    　<p class="userName_link">投稿者：
+        <%= link_to @protection.user.name, "/users/#{@protection.user.id}/profile",
+        class:"users_name" %>さんにメッセージを送る
+      </p>
+    </div>
     <div class=contact_box>
-      <p>※犬に見覚えがある場合は、上記の届け出された機関に連絡してください。</p>
+      <p>※保護犬に見覚えがある場合は、上記の届け出された機関またはDMにてご連絡ください。</p>
     </div>
   </div>
 </div>
