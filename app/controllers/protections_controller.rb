@@ -24,7 +24,6 @@ class ProtectionsController < ApplicationController
 
   def show
     @protection = Protection.find(params[:id])
-    @user = User.find(params[:id])
   end
 
   def edit
