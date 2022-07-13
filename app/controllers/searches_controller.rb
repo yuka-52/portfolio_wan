@@ -23,7 +23,7 @@ class SearchesController < ApplicationController
   end
 
   def show
-    @search = Search.find(params[:id])
+    @search = Search.find_by(params[:id])
     @comments = @search.comments
     @comment = current_user.comments.new
     @user = User.find(params[:id])
