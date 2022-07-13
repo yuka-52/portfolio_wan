@@ -26,19 +26,19 @@ class UsersController < ApplicationController
 
   def profile
     @user = User.find(params[:id])
-    @currentUserEntry=Entry.where(user_id: current_user.id)
-    @userEntry=Entry.where(user_id: @user.id)
+    @current_userentry = Entry.where(user_id: current_user.id)
+    @user_entry = Entry.where(user_id: @user.id)
     if @user.id == current_user.id
     else
-      @currentUserEntry.each do |cu|
-        @userEntry.each do |u|
-          if cu.room_id == u.room_id then
-            @isRoom = true
-            @roomId = cu.room_id
+      @current_userentry.each do |cu|
+        @user_entry.each do |u|
+          if cu.room_id == u.room_id
+            @is_room = true
+            @room_id = cu.room_id
           end
         end
       end
-      if @isRoom
+      if @is_room
       else
         @room = Room.new
         @entry = Entry.new
@@ -49,6 +49,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :introdction, :image)
+    params.require(:user).permit(:name, :email)
   end
 end

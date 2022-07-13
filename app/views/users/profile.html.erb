@@ -10,7 +10,7 @@
     <hr class= "line_profile">
     <% if @user.id == current_user.id %>
     <% else %>
-      <% if @isRoom == true %>
+      <% if @is_room == true %>
         <p class="chatroom">
           <a href="/rooms/<%= @roomId %>">メッセージを送る</a>
         </p>

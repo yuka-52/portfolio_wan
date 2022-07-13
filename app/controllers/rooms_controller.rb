@@ -14,7 +14,7 @@ class RoomsController < ApplicationController
     current_entries.each do |entry|
       my_room_id << entry.room.id
     end
-    @anotherEntries = Entry.where(room_id: my_room_id).where.not(user_id: current_user.id)
+    @another_entries = Entry.where(room_id: my_room_id).where.not(user_id: current_user.id)
   end
 
   def show

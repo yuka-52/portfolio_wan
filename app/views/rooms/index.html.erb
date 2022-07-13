@@ -12,8 +12,8 @@
       <h1 class="messaegeIndex">メッセージ一覧</div>
       <div class="indexBox">
         <hr>
-        <% if @anotherEntries.present? %>
-          <% @anotherEntries.each do |e| %>
+        <% if @another_entries.present? %>
+          <% @another_entries.each do |e| %>
             <%= link_to room_path(e.room.id) do %>
               <p class="textCenter"><%= e.user.name %>さんとのメッセージ</p><br>
             <% end %>
