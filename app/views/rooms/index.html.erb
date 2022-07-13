@@ -11,13 +11,13 @@
     <div class="userBox">
       <h1 class="messaegeIndex">メッセージ一覧</div>
       <div class="indexBox">
+        <hr>
         <% if @anotherEntries.present? %>
           <% @anotherEntries.each do |e| %>
             <%= link_to room_path(e.room.id) do %>
-              <hr>
               <p class="textCenter"><%= e.user.name %>さんとのメッセージ</p><br>
-              <hr>
             <% end %>
+            <hr>
           <% end %>
         <% else %>
           <h3 class="text-center">メッセージはまだありません</h3>

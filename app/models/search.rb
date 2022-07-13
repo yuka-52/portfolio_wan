@@ -42,7 +42,6 @@ class Search < ApplicationRecord
       visited_id: visited_id,
       action: 'comment'
     )
-
     if notification.visitor_id == notification.visited_id
       notification.checked = true
     end
