@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   resources :searches do
     resources :comments, only: [:create]
   end
+  get 'searches/:id/show', to: 'searches#show'
   post 'searches/:id/edit', to: 'searches#edit'
   resources :protections
   post 'protections/:id/edit', to: 'protections#edit'
