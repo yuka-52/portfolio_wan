@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_12_140752) do
+ActiveRecord::Schema.define(version: 2022_07_14_074157) do
 
   create_table "boards", charset: "utf8mb3", force: :cascade do |t|
     t.string "board_content"
@@ -109,6 +109,8 @@ ActiveRecord::Schema.define(version: 2022_07_12_140752) do
     t.string "search_title"
     t.date "disappeared_date"
     t.integer "user_id"
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "sights", charset: "utf8mb3", force: :cascade do |t|

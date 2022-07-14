@@ -12,6 +12,8 @@ class Search < ApplicationRecord
   belongs_to :user
   has_many :comments, dependent: :destroy
   has_many :notifications, dependent: :destroy
+  geocoded_by :disappeared_place
+  after_validation :geocode, if: :disappeared_place_changed?
 
   def self.finder(search, address)
     if address
