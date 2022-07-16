@@ -8,7 +8,7 @@
   </div>
   <div id="target"></div>
 </div>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7CqEtVmbMuQ-H4ndOhdEwGjk0d-W46wU&callback=initMap" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
 <script>
   var map;
   var marker;
