@@ -33,4 +33,5 @@ Rails.application.routes.draw do
   resources :notifications, only: :index
   resources :messages, :only => [:create]
   resources :rooms, :only => [:create, :show, :index]
+  get 'maps/index', to: 'maps#index'
 end

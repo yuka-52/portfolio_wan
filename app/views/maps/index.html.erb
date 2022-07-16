@@ -1,0 +1,84 @@
+<%= stylesheet_link_tag 'maps', :media => "all" %>
+<div class="mapPage">
+  <h2>《 捜索範囲検索gmap 》</h2>
+  <div class="searchmapArea">
+    <input type="text" id="keyword", placeholder="犬の失踪場所を入力"　>
+    <button id="search">検索</button>
+    <button id="clear">結果クリア</button>
+  </div>
+  <div id="target"></div>
+</div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7CqEtVmbMuQ-H4ndOhdEwGjk0d-W46wU&callback=initMap" async defer></script>
+<script>
+  var map;
+  var marker;
+  var infoWindow;
+  var geocoder
+  var centerp = {lat: 35.6769883, lng: 139.7588499};
+
+  function initMap() {
+    var target = document.getElementById('target');
+    map = new google.maps.Map(target, {
+      center: centerp,
+      zoom: 14,
+    });
+    document.getElementById('search').addEventListener('click', function() {  // 検索実行ボタンが押下されたとき
+      var place = document.getElementById('keyword').value;
+      var geocoder = new google.maps.Geocoder();      // geocoderのコンストラクタ
+      geocoder.geocode({
+        address: place
+      }, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        var bounds = new google.maps.LatLngBounds();
+          for (var i in results) {
+            if (results[0].geometry) {
+              var latlng = results[0].geometry.location;
+              var address = results[0].formatted_address;
+              bounds.extend(latlng);
+              setMarker(latlng);
+              setInfoW(place, latlng, address);
+              markerEvent();
+            }
+          }
+        } else if (status == google.maps.GeocoderStatus.ZERO_RESULTS) {
+          alert("見つかりません");
+        } else {
+          console.log(status);
+          alert("エラー発生");
+        }
+      });
+    });
+    document.getElementById('clear').addEventListener('click', function() {
+      deleteMakers();
+    });
+  }
+// マーカーのセットを実施する
+  function setMarker(setplace) {
+    deleteMakers();  // 既にあるマーカーを削除
+    var iconUrl = 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png';
+    marker = new google.maps.Marker({
+      position: setplace,
+      map: map,
+      icon: iconUrl
+    });
+  }
+  //マーカーを削除する
+  function deleteMakers() {
+    if(marker != null){
+      marker.setMap(null);
+    }
+    marker = null;
+  }
+  // マーカーへの吹き出しの追加
+  function setInfoW(place, latlng, address) {
+    infoWindow = new google.maps.InfoWindow({
+      content: "<a href='http://www.google.com/search?q=" + place + "' target='_blank'>" + place + "</a><br><br>" + latlng + "<br><br>" + address + "<br><br><a href='http://www.google.com/search?q=" + place + "&tbm=isch' target='_blank'>画像検索 by google</a>"
+    });
+  }
+  // クリックイベント
+  function markerEvent() {
+    marker.addListener('click', function() {
+      infoWindow.open(map, marker);
+    });
+  }
+</script>
