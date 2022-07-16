@@ -57,7 +57,7 @@ class SearchesController < ApplicationController
 
   def search_params
     params.require(:search).permit(:search_title, :dog_breed,
-    :dog_age, :dog_profile, :disappeared_place, :disappeared_date,
+    :dog_age, :dog_profile, :address, :disappeared_date,
     :contact, { dog_images: [] })
   end
 

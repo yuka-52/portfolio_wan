@@ -3,7 +3,7 @@ class Search < ApplicationRecord
   validates :dog_breed, presence: true
   validates :dog_age, presence: true, numericality: true
   validates :dog_profile, presence: true, length: { maximum: 400 }
-  validates :disappeared_place, presence: true, length: { maximum: 400 }
+  validates :address, presence: true, length: { maximum: 200 }
   validates :disappeared_date, presence: true
   validates :contact, presence: true
   validates :dog_images, presence: true
@@ -12,8 +12,6 @@ class Search < ApplicationRecord
   belongs_to :user
   has_many :comments, dependent: :destroy
   has_many :notifications, dependent: :destroy
-  geocoded_by :disappeared_place
-  after_validation :geocode, if: :disappeared_place_changed?
 
   def self.finder(search, address)
     if address

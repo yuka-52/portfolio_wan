@@ -55,7 +55,7 @@
       <%= submit_tag '検索', class:"search_sub" %>
     <% end %>
   </div>
-    <div class="finderBox_sightarea">
+  <div class="finderBox_sightarea">
     <h4>《 目撃された犬の条件検索 》</h4>
     <%= form_tag(sights_search_path,{method: "get"}) do %>
       <%= text_field_tag :address,"",placeholder:"エリアを入力",class:"form-control", size: '30x10' %>
@@ -67,5 +67,24 @@
       <%= text_field_tag :search,"",placeholder:"キーワードを入力",class:"form-control", size: '30x10' %>
       <%= submit_tag '検索', class:"search_sub" %>
     <% end %>
+  </div>
+  <div class="finderBox_sightarea">
+    <h4>《 捜索範囲検索 》</h4>
+    <p class="searchTopic">■ 小型犬の場合<br>
+      小型犬で特に人なつっこい性格の場合、早い段階で人に保護される可能性が高くなります。<br>
+      捜索方法も、迷子になった犬を捜すだけでなく、保護して下さった方も同時に捜す作業が必要です。<br>
+      一日の移動距離は約300ｍ～１km程度です。
+    </p>
+    <p class="searchTopic">■中型犬の場合<br>
+      中型で特に特徴がない場合、よっぽど人なつっこい性格を除いて、<br>
+      あまり人に関心を持たれずマイペースに移動してしまう傾向があります。<br>
+      一日の移動距離は約１～５km程度です。
+    </p>
+    <p class="searchTopic">■ 大型犬の場合<br>
+      大型犬が飼い主もなしで単独で歩き回っていると非常に目立つため、<br>
+      地域住民から保健所などに通報され管理センターで保護されるパターンが考えられます。<br>
+      一日の移動距離は約１～５km程度です。
+    </p>
+    <%= link_to "捜索範囲検索はこちら", root_path, class:"searchArea" %>
   </div>
 </div>

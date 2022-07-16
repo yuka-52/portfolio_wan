@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_14_074157) do
+ActiveRecord::Schema.define(version: 2022_07_16_060713) do
 
   create_table "boards", charset: "utf8mb3", force: :cascade do |t|
     t.string "board_content"
@@ -101,7 +101,7 @@ ActiveRecord::Schema.define(version: 2022_07_14_074157) do
     t.string "dog_breed"
     t.integer "dog_age"
     t.text "dog_profile"
-    t.text "disappeared_place"
+    t.string "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "contact"
@@ -109,8 +109,6 @@ ActiveRecord::Schema.define(version: 2022_07_14_074157) do
     t.string "search_title"
     t.date "disappeared_date"
     t.integer "user_id"
-    t.float "latitude"
-    t.float "longitude"
   end
 
   create_table "sights", charset: "utf8mb3", force: :cascade do |t|
