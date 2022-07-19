@@ -1,42 +1,58 @@
 <%= stylesheet_link_tag 'maps', :media => "all" %>
 <div class="mapPage">
   <h2>《 捜索範囲検索gmap 》</h2>
+  <p class="searchmemo">犬の捜索ではなるべく短い移動範囲内で保護することが必要です。まずは、近所やいつもの散歩コースを念入りに捜しましょう。<br>
+    犬種や年齢、性格によって移動距離は異なります。愛犬の特徴や失踪日数から、移動距離を予測しましょう。<br>
+    1日の移動距離　　小型犬：約300m〜1km程度<br>
+    　　　　　　　　 中・大型犬：約1〜5km程度
+  </p>
   <div class="searchmapArea">
-    <input type="text" id="keyword", placeholder="犬の失踪場所を入力"　>
-    <button id="search">検索</button>
-    <button id="clear">結果クリア</button>
+    <input type="text" id="address", placeholder="犬の失踪場所を入力"　><br>
+    <p>約 <input type="number" id="km", placeholder="推定移動距離", value="0"> km</p>
+    <div class="searchBtn">
+      <button id="search">検索</button>
+      <button id="clear">結果クリア</button>
+    </div>
   </div>
   <div id="target"></div>
 </div>
-<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
+
 <script>
   var map;
   var marker;
   var infoWindow;
-  var geocoder
-  var centerp = {lat: 35.6769883, lng: 139.7588499};
 
   function initMap() {
     var target = document.getElementById('target');
+    var centerp = {lat: 35.6769883, lng: 139.7588499};
     map = new google.maps.Map(target, {
       center: centerp,
-      zoom: 14,
+      zoom: 12,
     });
-    document.getElementById('search').addEventListener('click', function() {  // 検索実行ボタンが押下されたとき
-      var place = document.getElementById('keyword').value;
+
+    document.getElementById('search').addEventListener('click', function() {
+
+      var place = document.getElementById('address').value;
       var geocoder = new google.maps.Geocoder();      // geocoderのコンストラクタ
+    
       geocoder.geocode({
         address: place
       }, function(results, status) {
-      if (status == google.maps.GeocoderStatus.OK) {
-        var bounds = new google.maps.LatLngBounds();
+        if (status == google.maps.GeocoderStatus.OK) {
+          var bounds = new google.maps.LatLngBounds();
           for (var i in results) {
             if (results[0].geometry) {
+                  // 緯度経度を取得
               var latlng = results[0].geometry.location;
+                  // 住所を取得
               var address = results[0].formatted_address;
+                  // 検索結果地が含まれるように範囲を拡大
               bounds.extend(latlng);
+                  // マーカーのセット
               setMarker(latlng);
+                  // マーカーへの吹き出しの追加
               setInfoW(place, latlng, address);
+                  // マーカーにクリックイベントを追加
               markerEvent();
             }
           }
@@ -48,37 +64,40 @@
         }
       });
     });
+
     document.getElementById('clear').addEventListener('click', function() {
       deleteMakers();
     });
   }
-// マーカーのセットを実施する
+
   function setMarker(setplace) {
-    deleteMakers();  // 既にあるマーカーを削除
+    deleteMakers();
+
     var iconUrl = 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png';
-    marker = new google.maps.Marker({
-      position: setplace,
-      map: map,
-      icon: iconUrl
-    });
-  }
-  //マーカーを削除する
+      marker = new google.maps.Marker({
+        position: setplace,
+        map: map,
+        icon: iconUrl
+      });
+    }
+
   function deleteMakers() {
     if(marker != null){
       marker.setMap(null);
     }
     marker = null;
   }
-  // マーカーへの吹き出しの追加
+
   function setInfoW(place, latlng, address) {
     infoWindow = new google.maps.InfoWindow({
       content: "<a href='http://www.google.com/search?q=" + place + "' target='_blank'>" + place + "</a><br><br>" + latlng + "<br><br>" + address + "<br><br><a href='http://www.google.com/search?q=" + place + "&tbm=isch' target='_blank'>画像検索 by google</a>"
     });
   }
-  // クリックイベント
+
   function markerEvent() {
     marker.addListener('click', function() {
       infoWindow.open(map, marker);
     });
   }
 </script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
