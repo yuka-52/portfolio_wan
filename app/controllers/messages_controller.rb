@@ -2,20 +2,15 @@ class MessagesController < ApplicationController
   before_action :authenticate_user!, :only => [:create]
 
   def create
-    @message = Message.new(message_params)
-    @message.user_id = current_user.id
-    @message_room = @message.room
-    if @message.save
-      @message_room.create_notification_dm!(current_user, @message.id)
-      redirect_back(fallback_location: root_path)
+    if Entry.where(:user_id => current_user.id, :room_id => params[:message][:room_id]).present?
+      @message = Message.create(params.require(:message).permit(:user_id, :content, :room_id).merge(:user_id => current_user.id))
+      @room_message = @message.room
+      if @message.save
+        @room_message.create_notification_dm!(current_user, @message.id)
+          redirect_to "/rooms/#{@message.room_id}"
+      end
     else
       redirect_back(fallback_location: root_path)
     end
-  end
-
-  private
-
-  def message_params
-    params.require(:message).permit(:room_id, :content)
   end
 end
