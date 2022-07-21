@@ -34,7 +34,6 @@ gem 'fog-aws'
 gem 'dotenv'
 gem 'geocoder'
 gem 'gmaps4rails'
-gem 'rails-erd'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -62,4 +61,5 @@ group :development do
   gem "rubocop-performance", require: false
   gem "rubocop-rails", require: false
   gem "rubocop-rspec", require: false
+  gem 'rails-erd'
 end
