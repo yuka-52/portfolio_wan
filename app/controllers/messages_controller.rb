@@ -6,14 +6,10 @@ class MessagesController < ApplicationController
       @message = Message.create(params.require(:message).permit(:user_id, :content, :room_id).merge(:user_id => current_user.id))
       @room_message = @message.room
       @message.user_id = current_user.id
-      if @message.save
-        @room_message.create_notification_dm!(current_user, @message.id)
-          redirect_to "/rooms/#{@message.room_id}"
-      else
-          redirect_back(fallback_location: root_path)
-      end
+      @room_message.create_notification_dm!(current_user, @message.id)
     else
-      redirect_back(fallback_location: root_path)
+      flash[:alert] = "メッセージ送信に失敗しました。"
     end
+    redirect_back(fallback_location: root_path)
   end
 end
