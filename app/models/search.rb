@@ -15,7 +15,7 @@ class Search < ApplicationRecord
 
   def self.finder(search, address)
     if address
-      @searches = Search.where(["disappeared_place LIKE(?)", "%#{address}%"])
+      @searches = Search.where(["address LIKE(?)", "%#{address}%"])
     elsif search
       @searches = Search.where([
         "search_title LIKE(?) OR dog_breed LIKE(?) OR dog_profile LIKE(?)
