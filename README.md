@@ -20,23 +20,23 @@
 
 *使用方法 　<br>
 ・サイトを使用するためにアカウント登録をし、ログインをする。ゲストログインもあります。　<br>
-<img width="347" alt="スクリーンショット 2022-07-22 0 04 48" src="https://user-images.githubusercontent.com/98066974/180247692-ace969b9-49d1-4708-9f96-eb4ffac1cd34.png">
+<img width="347" alt="スクリーンショット 2022-07-22 0 04 48" src="https://user-images.githubusercontent.com/98066974/180247692-ace969b9-49d1-4708-9f96-eb4ffac1cd34.png"><br>
 ・愛犬が迷子になった飼い主が、迷子の犬の情報を投稿できる。　<br>
 ・迷子の犬を保護した人が、保護犬の飼い主を見つけるために情報を投稿できる。　<br>
 ・迷子の犬を目撃した人が、目撃した犬の情報を投稿できる。　<br>
-<img width="1339" alt="スクリーンショット 2022-07-22 0 06 02" src="https://user-images.githubusercontent.com/98066974/180247901-9a31aa39-e6ac-42a8-a80e-a9f93b938ad3.png">
+<img width="1339" alt="スクリーンショット 2022-07-22 0 06 02" src="https://user-images.githubusercontent.com/98066974/180247901-9a31aa39-e6ac-42a8-a80e-a9f93b938ad3.png"><br>
 ・迷子犬・保護犬・目撃された犬の情報が各々一覧で表示できる。<br>
-<img width="893" alt="スクリーンショット 2022-07-22 0 06 56" src="https://user-images.githubusercontent.com/98066974/180248462-3100ee65-6c1b-4f8f-9919-92fcc9979e75.png">
-<img width="1664" alt="スクリーンショット 2022-07-22 0 09 01" src="https://user-images.githubusercontent.com/98066974/180248634-83c5de34-57f5-4251-bb50-3ee1d8efc385.png">
+<img width="893" alt="スクリーンショット 2022-07-22 0 06 56" src="https://user-images.githubusercontent.com/98066974/180248462-3100ee65-6c1b-4f8f-9919-92fcc9979e75.png"><br>
+<img width="1664" alt="スクリーンショット 2022-07-22 0 09 01" src="https://user-images.githubusercontent.com/98066974/180248634-83c5de34-57f5-4251-bb50-3ee1d8efc385.png"><br>
 ・情報を投稿した人のみが、情報を編集・削除できる。　<br>
 ・投稿者にDMを送ることが出来る。<br>
-<img width="898" alt="スクリーンショット 2022-07-22 0 10 54" src="https://user-images.githubusercontent.com/98066974/180250697-b70d5cb1-ea5d-43b8-8597-948bf9a5c221.png">
+<img width="898" alt="スクリーンショット 2022-07-22 0 10 54" src="https://user-images.githubusercontent.com/98066974/180250697-b70d5cb1-ea5d-43b8-8597-948bf9a5c221.png"><br>
 ・犬の情報投稿の詳細に、コメントを投稿できる。　<br>
-<img width="547" alt="スクリーンショット 2022-07-22 0 18 57" src="https://user-images.githubusercontent.com/98066974/180250912-5e45c42f-fe6b-442a-8715-1b2357107669.png">
+<img width="547" alt="スクリーンショット 2022-07-22 0 18 57" src="https://user-images.githubusercontent.com/98066974/180250912-5e45c42f-fe6b-442a-8715-1b2357107669.png"><br>
 ・迷子犬・保護犬・目撃された犬の情報が各々一覧で表示できる。<br>
 ・犬の情報を、迷子・保護・目撃別にエリア/フリーワードで検索できる。<br>
 ・GoogleMapを使用し、捜索範囲を検索できる。<br>
-<img width="635" alt="スクリーンショット 2022-07-22 0 19 51" src="https://user-images.githubusercontent.com/98066974/180251407-025b01e5-88a3-498b-a1c9-7ccbd9060f91.png">
+<img width="635" alt="スクリーンショット 2022-07-22 0 19 51" src="https://user-images.githubusercontent.com/98066974/180251407-025b01e5-88a3-498b-a1c9-7ccbd9060f91.png"><br>
 
 *こだわりポイント <br>
 ・GoogleMapを導入し、失踪場所や最終目撃地などと検索欄に入力することで、その場所を中心地とした地図を表示させました。 <br>
