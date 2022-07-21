@@ -9,14 +9,14 @@
   <% @searches.each do |search| %>
     <div class="searchMain">
       <div class="searchBox">
-        <h3><%= link_to search.search_title , search, class:"search_title" %></h3>
+        <h3><%= link_to truncate(search.search_title, length:14), search, class:"search_title" %></h3>
         <div class="searchImage">
           <% if search.dog_images? %>
             <%= image_tag search.dog_images[0].url, class:"search_image", size: '280x320' %>
           <% end %>
         </div>
         <div class="searchCaption">
-          <h3>いなくなった場所：<%= search.address %></h3>
+          <h3>いなくなった場所：<%= truncate(search.address, length:39) %></h3>
           <h3>いなくなった日時：<%= search.disappeared_date %></h3>
         </div>
       </div>
