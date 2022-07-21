@@ -68,3 +68,6 @@
 　・単体テスト(model) <br>
 　・機能テスト(request) <br>
 　・統合テスト(system) <br>
+
+*ER図　<br>
+<img width="1680" alt="スクリーンショット 2022-07-22 0 51 31" src="https://user-images.githubusercontent.com/98066974/180258674-094649a6-6f00-4b7d-8623-87d33f79d76b.png"> <br>
