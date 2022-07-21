@@ -7,9 +7,8 @@ class MessagesController < ApplicationController
       @room_message = @message.room
       if @message.save
         @room_message.create_notification_dm!(current_user, @message.id)
-        redirect_to "/rooms/#{@message.room_id}"
-      else
         redirect_back(fallback_location: root_path)
+      else
       end
     else
       redirect_back(fallback_location: root_path)
