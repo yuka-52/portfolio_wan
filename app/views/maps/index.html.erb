@@ -25,35 +25,38 @@
   function initMap() {
     var target = document.getElementById('target');
     var centerp = {lat: 35.6769883, lng: 139.7588499};
-    map = new google.maps.Map(target, {
+    map = new google.maps.Map( target, {
       center: centerp,
-      zoom: 12,
+      zoom: 14,
     });
-
     document.getElementById('search').addEventListener('click', function() {
-
       var place = document.getElementById('address').value;
-      var geocoder = new google.maps.Geocoder();      // geocoderのコンストラクタ
-    
-      geocoder.geocode({
-        address: place
-      }, function(results, status) {
+      var geocoder = new google.maps.Geocoder();
+      var km = document.getElementById('km').value;
+      km = Number(km);
+
+      geocoder.geocode({ address: place }, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
           var bounds = new google.maps.LatLngBounds();
+          map.setCenter(results[0].geometry.location);
           for (var i in results) {
             if (results[0].geometry) {
-                  // 緯度経度を取得
               var latlng = results[0].geometry.location;
-                  // 住所を取得
               var address = results[0].formatted_address;
-                  // 検索結果地が含まれるように範囲を拡大
               bounds.extend(latlng);
-                  // マーカーのセット
               setMarker(latlng);
-                  // マーカーへの吹き出しの追加
               setInfoW(place, latlng, address);
-                  // マーカーにクリックイベントを追加
               markerEvent();
+              var myCircle = new google.maps.Circle({
+                strokeColor: '#FF0000',
+                strokeOpacity: 0.8,
+                strokeWeight: 2,
+                fillColor: '#FF0000',
+                fillOpacity: 0.35,
+                map: map,
+                center: latlng,
+                radius: (km * 1000)
+　　　　　　　　　});
             }
           }
         } else if (status == google.maps.GeocoderStatus.ZERO_RESULTS) {
@@ -64,7 +67,6 @@
         }
       });
     });
-
     document.getElementById('clear').addEventListener('click', function() {
       deleteMakers();
     });
@@ -72,7 +74,6 @@
 
   function setMarker(setplace) {
     deleteMakers();
-
     var iconUrl = 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png';
       marker = new google.maps.Marker({
         position: setplace,
@@ -100,4 +101,4 @@
     });
   }
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['API_KEY'] %>&callback=initMap" async defer></script>
