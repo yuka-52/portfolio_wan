@@ -34,6 +34,7 @@ gem 'fog-aws'
 gem 'dotenv'
 gem 'geocoder'
 gem 'gmaps4rails'
+gem 'rails-erd'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
