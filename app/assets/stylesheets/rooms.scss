@@ -1,0 +1,109 @@
+/*================= DM詳細 ==================*/
+.dmPage {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.row_dm {
+  display: flex;
+  flex-wrap: wrap;
+}
+.active, .active1 {
+  border-right: 3px solid #000066;
+  padding: 10px;
+}
+ul {
+  list-style: none;
+}
+.active a {
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px;
+  color: #000066;
+}
+.active a:hover {
+  color: #C0C0C0;
+}
+.active1 {
+  border-right: 3px solid #C0C0C0;
+  padding: 10px;
+}
+.active1 a {
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px;
+  color: #C0C0C0;
+}
+.userBox {
+  position: relative;
+  width: 70%;
+  left: 5%;
+}
+.messeageMain {
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
+.Users {
+  margin-bottom: 5px;
+}
+.messeage_box {
+  position: absolute;
+  top: 60px;
+  left: 23%;
+}
+.messeageSubmit {
+  position: absolute;
+  top: 90px;
+  left: 70%;
+}
+.messeageBox {
+  width: 40%;
+  hight: aito;
+  text-align: left;
+  padding: 24px;
+  margin: 50px auto;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0px 1px 6px 0px;
+  position: relative;
+  right: 5%;
+}
+.user_by {
+  position: absolute;
+  right: 40px;
+  color: black;
+}
+.messaegeIndex {
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
+.textCenter {
+  
+}
+.text-center:hover {
+  color: #C0C0C0;
+}
+.indexBox {
+  width: 40%;
+  hight: aito;
+  text-align: left;
+  padding: 24px;
+  margin: 50px auto;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0px 1px 6px 0px;
+  position: absolute;
+  left: 38%;
+}
+.textCenter {
+  position: absolute;
+  left: 40%;
+}
+.text-center {
+  justify-content: center;
+  text-align: center;
+}

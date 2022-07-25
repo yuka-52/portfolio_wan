@@ -1,0 +1,25 @@
+<%= stylesheet_link_tag 'searches', :media =>"all" %>
+<div class="searchContent">
+  <div class="searchTop">
+    <div class="page-header">
+      <h1 class="page-main">検索結果：<%= @searches.count %>件</h1>
+      <%= link_to "ホームへ戻る", root_path, class: "btn root-default" %>
+    </div>
+  </div>
+  <% @searches.each do |search| %>
+    <div class="searchMain">
+      <div class="searchBox">
+        <h3><%= link_to truncate(search.search_title, length:14), search, class:"search_title" %></h3>
+        <div class="searchImage">
+          <% if search.dog_images? %>
+            <%= image_tag search.dog_images[0].url, class:"search_image", size: '280x320' %>
+          <% end %>
+        </div>
+        <div class="searchCaption">
+          <h3>保護した場所：<%= truncate(search.address, length:38) %></h3>
+          <h3>保護した日時：<%= search.disappeared_date %></h3>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

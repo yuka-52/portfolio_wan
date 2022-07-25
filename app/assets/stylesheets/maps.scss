@@ -1,0 +1,52 @@
+.mapPage{
+  width: 100%;
+  padding-top: 10px;
+  position: relative;
+}
+.mapPage h2 {
+  margin-bottom: 15px;
+}
+.searchmemo {
+  font-size: 14px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+}
+.searchmapArea{
+  margin-left: 30px;
+  line-height: 3;
+  position: relative;
+  padding-bottom: 12px;
+}
+#search{
+  font-size: 13px;
+  color: #ffffff;
+  background-color: #6495ED;
+  border-radius: 5px;
+}
+#km {
+  width: 7em;
+}
+.searchBtn {
+  position: absolute;
+  left: 150px;
+  top: 28px;
+}
+#clear {
+  font-size: 13px;
+  border-radius: 5px;
+}
+#target {
+  height: 600px;
+}
+.homeback {
+  color: black;
+  font-size: 14px;
+  position: absolute;
+  left: 90%;
+  top: 0px;
+  background-color: #FFCC66;
+  border-radius: 25px;
+  width: 90px;
+  padding: 10px;
+  text-align: center;
+}

@@ -1,0 +1,10 @@
+<%= stylesheet_link_tag 'notifications', :media => "all" %>
+<h2 class="text-center">通知</h2>
+<hr>
+<% if @notifications.exists? %>
+  <div class="users-index">
+    <%= render @notifications %>
+  </div>
+<% else %>
+  <p class="nonNotifications">通知はありません</p>
+<% end %>

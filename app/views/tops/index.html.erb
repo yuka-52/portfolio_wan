@@ -1,0 +1,90 @@
+<%= stylesheet_link_tag 'top', :media =>"all" %>
+<div class="main_pic"></div>
+<div class="main_nav">
+  <li class="nav_link"><%= link_to"ホーム", root_path, class:"nav_menu" %></li>
+  <li class="nav_link"><%= link_to"迷子の犬を探す", searches_index_path, class:"nav_menu" %></li>
+  <li class="nav_link"><%= link_to"迷子の犬を保護した", protections_index_path, class:"nav_menu" %></li>
+  <li class="nav_link"><%= link_to"迷子の犬を目撃した", sights_index_path, class:"nav_menu" %></li>
+</div>
+<div class="main_page">
+  <div class="title">
+    <h1>Wan Search</h1><br>
+    <p>Wan Searchは、『愛犬が迷子になった』、『迷子の犬を保護した』、『迷子の犬を目撃した』などの情報を登録できる無料の掲示板です。</p>
+    <p>コロナ禍によるペットブームや保護犬の譲渡が増え嬉しい反面、迷子になり飼い主さんと離れ離れになるワンコが増えています。<br>
+       2020年度、犬の殺処分数は4059匹でした。1日約11匹の犬達が殺されていることになります。<br>
+       その中には、迷子になりお家に帰れなくなっている犬たちも含まれています。<br>
+       迷子の家族が1日でも早く元の生活に戻れるようご協力をお願い申し上げます。</p>
+  </div>
+</div>
+<div class="menu_btn">
+  <li class="btn_link"><%= link_to "迷子の犬を登録する", "/searches/new", class: "btn btn-default" %></li>
+  <li class="btn_link"><%= link_to "保護した犬を登録する", "/protections/new", class: "btn btn-default" %></li>
+  <li class="btn_link"><%= link_to "目撃した犬を登録する", "/sights/new", class: "btn btn-default" %></li>
+</div>
+<div class="sub_page">
+  <div class="dog_number_box">
+    <h3>迷子犬の投稿総数:<%= Search.count %>件</h3>
+    <h3>保護犬の投稿総数:<%= Protection.count %>件</h3>
+    <h3>目撃犬の投稿総数:<%= Sight.count %>件</h3>
+  </div>
+</div>
+<div class="finderPage">
+  <div class="finderBox_protectionarea">
+    <h4>《 迷子の犬の条件検索 》</h4>
+    <%= form_tag(searches_finder_path,{method: "get"}) do %>
+      <%= text_field_tag :address,"",placeholder:"エリアを入力",class:"form-control" , size: '30x10' %>
+      <%= submit_tag '検索', class:"search_sub" %>
+    <% end %>
+  </div>
+  <div class="finderBox_protection">
+    <%= form_tag(searches_finder_path,{method: "get"}) do %>
+      <%= text_field_tag :search,"",placeholder:"キーワードを入力",class:"form-control", size: '30x10' %>
+      <%= submit_tag '検索', class:"search_sub" %>
+    <% end %>
+  </div>
+  <div class="finderBox_protectionarea">
+    <h4>《 保護されている犬の条件検索 》</h4>
+    <%= form_tag(protections_search_path,{method: "get"}) do %>
+      <%= text_field_tag :address,"",placeholder:"エリアを入力",class:"form-control" , size: '30x10' %>
+      <%= submit_tag '検索', class:"search_sub" %>
+    <% end %>
+  </div>
+  <div class="finderBox_protection">
+    <%= form_tag(protections_search_path,{method: "get"}) do %>
+      <%= text_field_tag :search,"",placeholder:"キーワードを入力",class:"form-control", size: '30x10' %>
+      <%= submit_tag '検索', class:"search_sub" %>
+    <% end %>
+  </div>
+  <div class="finderBox_sightarea">
+    <h4>《 目撃された犬の条件検索 》</h4>
+    <%= form_tag(sights_search_path,{method: "get"}) do %>
+      <%= text_field_tag :address,"",placeholder:"エリアを入力",class:"form-control", size: '30x10' %>
+      <%= submit_tag '検索', class:"search_sub" %>
+    <% end %>
+  </div>
+  <div class="finderBox_protection">
+    <%= form_tag(sights_search_path,{method: "get"}) do %>
+      <%= text_field_tag :search,"",placeholder:"キーワードを入力",class:"form-control", size: '30x10' %>
+      <%= submit_tag '検索', class:"search_sub" %>
+    <% end %>
+  </div>
+  <div class="finderBox_sightarea">
+    <h4>《 捜索範囲検索 》</h4>
+    <p class="searchTopic">■ 小型犬の場合<br>
+      小型犬で特に人なつっこい性格の場合、早い段階で人に保護される可能性が高くなります。<br>
+      捜索方法も、迷子になった犬を捜すだけでなく、保護して下さった方も同時に捜す作業が必要です。<br>
+      一日の移動距離は約300ｍ～１km程度です。
+    </p>
+    <p class="searchTopic">■中型犬の場合<br>
+      中型で特に特徴がない場合、よっぽど人なつっこい性格を除いて、<br>
+      あまり人に関心を持たれずマイペースに移動してしまう傾向があります。<br>
+      一日の移動距離は約１～５km程度です。
+    </p>
+    <p class="searchTopic">■ 大型犬の場合<br>
+      大型犬が飼い主もなしで単独で歩き回っていると非常に目立つため、<br>
+      地域住民から保健所などに通報され管理センターで保護されるパターンが考えられます。<br>
+      一日の移動距離は約１～５km程度です。
+    </p>
+    <%= link_to "捜索範囲検索はこちら", maps_index_path, class:"searchArea" %>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+<%= stylesheet_link_tag 'searches', :media => "all" %>
+<div class="search_main">
+  <div class="searchshow-box">
+    <h2 class="search-main">迷子犬情報詳細</h2>
+    <div class="container">
+      <div class="row main_image_box">
+        <%= image_tag @search.dog_images[0].url, class:"searchshow_image img01", size: '400x450' %>
+      </div>
+      <div class="detail">
+        <ul class="subimage img01">
+          <% @search.dog_images.each_with_index do |image, i| %>
+            <li><%= image_tag image.url, class:"mini_image", size: '120x100' %></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="media-body">
+        <ul class="list-inline">
+          <li>
+            <%= link_to '一覧ページへ戻る', searches_index_path %>
+          </li>
+        </ul>
+        <h2 class="dog_search_show"><%= @search.search_title %></h2>
+        <h3 class="dog_search_show">犬種：<%= @search.dog_breed %></h3>
+        <h3 class="dog_search_show">年齢：<%= @search.dog_age %>才</h3>
+        <p class="dog_search_show">特徴：<%= @search.dog_profile %></p>
+        <p class="dog_search_show">いなくなった場所：<%= @search.address %></p>
+        <p class="dog_search_show">いなくなった日時：<%= @search.disappeared_date %></p>
+        <p class="dog_search_show">連絡先：<%= @search.contact %></p>
+      </div>
+      <div class=edit_box>
+        <% if user_signed_in? && current_user.id == @search.user_id %>
+          <%= button_to "編集", edit_search_path, class:"edit_btn"%></td>
+        <% end %>
+      </div>
+      <div class=delete_box>
+        <% if user_signed_in? && current_user.id == @search.user_id %>
+          <%= button_to "削除", search_path, method: :delete, data: {confirm: "本当に削除しますか？"}, class:"edit_btn"%>
+        <% end %>
+      </div>
+      <div class="usersName">
+        <p class="userName_link">投稿者：
+          <%= link_to @search.user.name, "/users/#{@search.user.id}/profile",
+          class:"users_name" %>さんにメッセージを送る
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="commentMain">
+    <div class="comment_creat">
+      <h2>迷子犬についての情報をコメントをする</h2>
+      <%= form_with(model:[@search, @comment], method: :post) do |f| %>
+        <%= f.text_area :comment_content, class:"form-comment" %>
+        <%= f.hidden_field :search_id, value: @search.id %>
+        <%= f.submit "コメントする" , class:"comment_btn" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="commentMain">
+    <div class="comment_index">
+      <h2>コメント一覧</h2>
+      <% @comments.each do |comment| %>
+        <div class=commentBox>
+          <%= comment.user.name %>
+          <%= comment.created_at.strftime("%Y-%m-%d %H:%M:%S") %>
+          <%= comment.comment_content %>
+          <hr class= "line2">
+        </div>
+      <% end %>
+      <%= link_to "ホームへ戻る", root_path, class:"home_btn" %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+<%= stylesheet_link_tag 'searches', :media => "all" %>
+<div class="search-box">
+  <span>現在ログイン中のユーザー：<%= current_user.name %></span>
+  <h2 class="search-main">迷子犬情報登録</h2>
+  <%= form_with model: @search, local: true do |f| %>
+    <div class="search_view_content">
+      <span><%= f.label :タイトル, {class: 'require'} %></span>
+      <span class="condition">必須</span>
+      <%= f.text_field :search_title, placeholder:"白い犬探しています", class: 'form' %>
+      <hr class= "line">
+    </div>
+    <div class="search_view_content">
+      <span><%= f.label :犬種, {class: 'require'} %></span>
+    　<span class="condition">必須</span>
+    　<%= f.text_field  :dog_breed, placeholder:"犬種を入力", class: 'form' %>
+      <hr class= "line">
+    </div>
+    <div class="search_view_content">
+      <span><%= f.label :年齢, {class: 'require'} %></span>
+      <span class="condition">必須</span>
+      <%= f.text_field :dog_age, placeholder:"不明な場合は推定年齢を入力", class: 'form-age' %>
+      <span class="age">才</span>
+      <hr class= "line">
+    </div>
+    <div class="search_view_content">
+      <span><%= f.label :特徴, {class: 'require'} %></span>
+    　<span class="condition">必須</span>
+      <%= f.text_area :dog_profile, placeholder:"特徴を入力（名前や身体的特徴、身につけているもの）", class: 'form-text' %>
+      <hr class= "line">
+    </div>
+    <div class="search_view_content">
+      <span><%= f.label :いなくなった場所, {class: 'require'} %></span>
+      <span class="condition">必須</span>
+      <%= f.text_area :address, placeholder:"xx県xx市xx小学校付近", class: 'form-text' %>
+      <hr class= "line">
+    </div>
+    <div class="search_view_content">
+      <span><%= f.label :いなくなった日時, {class: 'require'} %></span>
+      <span class="condition">必須</span>
+      <%= f.date_field :disappeared_date, placeholder:"令和x年x月x日", class: 'form-text' %>
+      <hr class= "line">
+    </div>
+    <div class="search_view_content">
+      <span><%= f.label :見かけた際の連絡先, {class: 'require'} %></span>
+      <span class="condition">必須</span>
+      <%= f.text_area :contact, placeholder:"個人の電話番号などは避けてください", class: 'form-text' %>
+      <hr class= "line">
+    </div>
+    <div class="search_view_content">
+      <span><%= f.label :犬の画像, {class: 'require'} %></span>
+      <span class="condition">必須</span>
+      <%= f.file_field :dog_images, :multiple => true, class: 'form-image' %>
+      <hr class= "line">
+    </div>
+    <div class="search_view_content">
+      <%= f.submit"登録" , class:"search_btn" %>
+    </div>
+  <% end %>
+</div>
