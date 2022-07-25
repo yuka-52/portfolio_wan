@@ -36,7 +36,4 @@ yarn-debug.log*
 .yarn-integrity
 
 /storage/*
-public/uploads/*
-/spec/test_uploads
-.DS_Store
-.env
+/config/database.yml
