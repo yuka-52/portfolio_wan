@@ -1,0 +1,19 @@
+<%= stylesheet_link_tag 'notifications', :media => "all" %>
+<% visitor = notification.visitor %>
+<div class="user-view clearfix ">
+  <%= notification_form(notification) %>
+  <span class="moderate-font">
+    <%= " (#{time_ago_in_words(notification.created_at)}前)" %>
+  </span>
+  <br>
+  <% if !@comment.nil?  %>
+    <p class="moderate-font text-center" style="color: black;"></p>
+  <% end %>
+  <% if !@board.nil? %>
+    <p class="moderate-font text-center" style="color: black;"></p>
+  <% end %>
+  <% if notification.action=='dm' %>
+    <p class="moderate-font text-center" style="color: black;"></p>
+  <% end %>
+  <hr>
+</div>

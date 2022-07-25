@@ -1,0 +1,12 @@
+<header>
+  <div class="topBar">
+    <div class="container">
+      <%= link_to image_tag("logo_wan.jpg" , class:"logo"),root_path %>
+    </div>
+    <%  if user_signed_in?  %>
+      <%= render"shared/user" %>
+    <% else %>
+      <%= render"shared/guest" %>
+    <% end %>
+  </div>
+</header>
